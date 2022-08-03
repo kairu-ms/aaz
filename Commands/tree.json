@@ -460,7 +460,7 @@
                   },
                   "delete": {
                     "help": {
-                      "short": "Deletes a cluster instance."
+                      "short": "Delete a cluster instance."
                     },
                     "names": [
                       "monitor",
@@ -567,7 +567,7 @@
                       "lines": [
                         "Update a cluster instance."
                       ],
-                      "short": "Create or update a Log Analytics cluster."
+                      "short": "Update a cluster instance."
                     },
                     "names": [
                       "monitor",
