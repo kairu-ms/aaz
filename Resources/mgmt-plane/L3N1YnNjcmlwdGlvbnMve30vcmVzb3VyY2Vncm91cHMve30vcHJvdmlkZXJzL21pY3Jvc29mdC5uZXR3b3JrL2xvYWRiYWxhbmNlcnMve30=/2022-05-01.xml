@@ -1615,7 +1615,9 @@
             </arg>
             <arg type="object" var="$parameters.properties.frontendIPConfigurations[].properties.gatewayLoadBalancer" options="gateway-load-balancer" hide="True" group="Properties">
               <help short="The reference to gateway load balancer frontend IP."/>
-              <arg type="string" var="$parameters.properties.frontendIPConfigurations[].properties.gatewayLoadBalancer.id" options="id"/>
+              <arg type="string" var="$parameters.properties.frontendIPConfigurations[].properties.gatewayLoadBalancer.id" options="id">
+                <help short="Resource ID."/>
+              </arg>
             </arg>
             <arg type="string" var="$parameters.properties.frontendIPConfigurations[].properties.privateIPAddress" options="private-ip-address" group="Properties">
               <help short="Static private IP address to associate with the configuration."/>
@@ -1799,7 +1801,9 @@
             </arg>
             <arg type="object" var="$parameters.properties.frontendIPConfigurations[].properties.publicIPPrefix" options="public-ip-prefix" group="Properties">
               <help short="The reference to the Public IP Prefix resource."/>
-              <arg type="string" var="$parameters.properties.frontendIPConfigurations[].properties.publicIPPrefix.id" options="id"/>
+              <arg type="string" var="$parameters.properties.frontendIPConfigurations[].properties.publicIPPrefix.id" options="id">
+                <help short="Resource ID."/>
+              </arg>
             </arg>
             <arg type="object" var="$parameters.properties.frontendIPConfigurations[].properties.subnet" options="subnet" group="Properties">
               <help short="The reference to the subnet resource."/>
@@ -4656,7 +4660,9 @@
             </arg>
             <arg nullable="True" type="object" var="$parameters.properties.frontendIPConfigurations[].properties.publicIPPrefix" options="public-ip-prefix" group="Properties">
               <help short="The reference to the Public IP Prefix resource."/>
-              <arg nullable="True" type="string" var="$parameters.properties.frontendIPConfigurations[].properties.publicIPPrefix.id" options="id"/>
+              <arg nullable="True" type="string" var="$parameters.properties.frontendIPConfigurations[].properties.publicIPPrefix.id" options="id">
+                <help short="Resource ID."/>
+              </arg>
             </arg>
             <arg nullable="True" type="object" var="$parameters.properties.frontendIPConfigurations[].properties.subnet" options="subnet" group="Properties">
               <help short="The reference to the subnet resource."/>
@@ -8682,7 +8688,9 @@
         <argGroup name="Properties">
           <arg type="object" var="$parameters.properties.frontendIPConfigurations[].properties.gatewayLoadBalancer" options="gateway-load-balancer" hide="True" group="Properties">
             <help short="The reference to gateway load balancer frontend IP."/>
-            <arg type="string" var="$parameters.properties.frontendIPConfigurations[].properties.gatewayLoadBalancer.id" options="id"/>
+            <arg type="string" var="$parameters.properties.frontendIPConfigurations[].properties.gatewayLoadBalancer.id" options="id">
+              <help short="Resource ID."/>
+            </arg>
           </arg>
           <arg type="string" var="$parameters.properties.frontendIPConfigurations[].properties.privateIPAddress" options="private-ip-address" group="Properties">
             <help short="Static private IP address to associate with the configuration."/>
@@ -8708,7 +8716,9 @@
           </arg>
           <arg type="object" var="$parameters.properties.frontendIPConfigurations[].properties.publicIPPrefix" options="public-ip-prefix" group="Properties">
             <help short="The reference to the Public IP Prefix resource."/>
-            <arg type="string" var="$parameters.properties.frontendIPConfigurations[].properties.publicIPPrefix.id" options="id"/>
+            <arg type="string" var="$parameters.properties.frontendIPConfigurations[].properties.publicIPPrefix.id" options="id">
+              <help short="Resource ID."/>
+            </arg>
           </arg>
           <arg type="ResourceId" var="$parameters.properties.frontendIPConfigurations[].properties.subnet.id" options="subnet" group="Properties">
             <help short="Resource ID."/>
@@ -8718,8 +8728,11 @@
         <argGroup name="PublicIpAddress">
           <arg type="object" var="$parameters.properties.frontendIPConfigurations[].properties.publicIPAddress.extendedLocation" options="public-ip-address-extended-location" hide="True" group="PublicIpAddress" cls="ExtendedLocation_update">
             <help short="extended location"/>
-            <arg type="string" var="@ExtendedLocation_update.name" options="name"/>
+            <arg type="string" var="@ExtendedLocation_update.name" options="name">
+              <help short="The name of the extended location."/>
+            </arg>
             <arg type="string" var="@ExtendedLocation_update.type" options="type">
+              <help short="The type of the extended location."/>
               <enum>
                 <item name="EdgeZone" value="&quot;EdgeZone&quot;"/>
               </enum>
@@ -8730,8 +8743,11 @@
           </arg>
           <arg type="object" var="$parameters.properties.frontendIPConfigurations[].properties.publicIPAddress.properties.ddosSettings" options="public-ip-address-ddos-settings" hide="True" group="PublicIpAddress">
             <help short="ddos settings"/>
-            <arg type="@SubResource_update" var="$parameters.properties.frontendIPConfigurations[].properties.publicIPAddress.properties.ddosSettings.ddosProtectionPlan" options="ddos-protection-plan"/>
+            <arg type="@SubResource_update" var="$parameters.properties.frontendIPConfigurations[].properties.publicIPAddress.properties.ddosSettings.ddosProtectionPlan" options="ddos-protection-plan">
+              <help short="The DDoS protection plan associated with the public IP. Can only be set if ProtectionMode is Enabled"/>
+            </arg>
             <arg type="string" var="$parameters.properties.frontendIPConfigurations[].properties.publicIPAddress.properties.ddosSettings.protectionMode" options="protection-mode">
+              <help short="The DDoS protection mode of the public IP"/>
               <enum>
                 <item name="Disabled" value="&quot;Disabled&quot;"/>
                 <item name="Enabled" value="&quot;Enabled&quot;"/>
@@ -8748,9 +8764,15 @@
           </arg>
           <arg type="object" var="$parameters.properties.frontendIPConfigurations[].properties.publicIPAddress.properties.dnsSettings" options="public-ip-address-dns-settings" hide="True" group="PublicIpAddress">
             <help short="dns settings"/>
-            <arg type="string" var="$parameters.properties.frontendIPConfigurations[].properties.publicIPAddress.properties.dnsSettings.domainNameLabel" options="domain-name-label"/>
-            <arg type="string" var="$parameters.properties.frontendIPConfigurations[].properties.publicIPAddress.properties.dnsSettings.fqdn" options="fqdn"/>
-            <arg type="string" var="$parameters.properties.frontendIPConfigurations[].properties.publicIPAddress.properties.dnsSettings.reverseFqdn" options="reverse-fqdn"/>
+            <arg type="string" var="$parameters.properties.frontendIPConfigurations[].properties.publicIPAddress.properties.dnsSettings.domainNameLabel" options="domain-name-label">
+              <help short="The domain name label. The concatenation of the domain name label and the regionalized DNS zone make up the fully qualified domain name associated with the public IP address. If a domain name label is specified, an A DNS record is created for the public IP in the Microsoft Azure DNS system."/>
+            </arg>
+            <arg type="string" var="$parameters.properties.frontendIPConfigurations[].properties.publicIPAddress.properties.dnsSettings.fqdn" options="fqdn">
+              <help short="The Fully Qualified Domain Name of the A DNS record associated with the public IP. This is the concatenation of the domainNameLabel and the regionalized DNS zone."/>
+            </arg>
+            <arg type="string" var="$parameters.properties.frontendIPConfigurations[].properties.publicIPAddress.properties.dnsSettings.reverseFqdn" options="reverse-fqdn">
+              <help short="The reverse FQDN. A user-visible, fully qualified domain name that resolves to this public IP address. If the reverseFqdn is specified, then a PTR DNS record is created pointing from the IP address in the in-addr.arpa domain to the reverse FQDN."/>
+            </arg>
           </arg>
           <arg type="integer32" var="$parameters.properties.frontendIPConfigurations[].properties.publicIPAddress.properties.idleTimeoutInMinutes" options="public-ip-address-idle-timeout-in-minutes" hide="True" group="PublicIpAddress">
             <help short="idle timeout in minutes"/>
@@ -8761,20 +8783,42 @@
           <arg type="array<object>" var="$parameters.properties.frontendIPConfigurations[].properties.publicIPAddress.properties.ipTags" options="public-ip-address-ip-tags" hide="True" group="PublicIpAddress">
             <help short="ip-tags"/>
             <item type="object">
-              <arg type="string" var="$parameters.properties.frontendIPConfigurations[].properties.publicIPAddress.properties.ipTags[].ipTagType" options="ip-tag-type"/>
-              <arg type="string" var="$parameters.properties.frontendIPConfigurations[].properties.publicIPAddress.properties.ipTags[].tag" options="tag"/>
+              <arg type="string" var="$parameters.properties.frontendIPConfigurations[].properties.publicIPAddress.properties.ipTags[].ipTagType" options="ip-tag-type">
+                <help short="The IP tag type. Example: FirstPartyUsage."/>
+              </arg>
+              <arg type="string" var="$parameters.properties.frontendIPConfigurations[].properties.publicIPAddress.properties.ipTags[].tag" options="tag">
+                <help short="The value of the IP tag associated with the public IP. Example: SQL."/>
+              </arg>
             </item>
           </arg>
           <arg type="object" var="$parameters.properties.frontendIPConfigurations[].properties.publicIPAddress.properties.linkedPublicIPAddress" options="public-ip-address-linked-public-ip-address" hide="True" group="PublicIpAddress" cls="PublicIPAddress_update">
             <help short="linked-public-ip-address"/>
-            <arg type="@ExtendedLocation_update" var="@PublicIPAddress_update.extendedLocation" options="extended-location"/>
+            <arg type="object" var="@PublicIPAddress_update.extendedLocation" options="extended-location" cls="ExtendedLocation_update">
+              <help short="The extended location of the public ip address."/>
+              <arg type="string" var="@ExtendedLocation_update.name" options="name">
+                <help short="The name of the extended location."/>
+              </arg>
+              <arg type="string" var="@ExtendedLocation_update.type" options="type">
+                <help short="The type of the extended location."/>
+                <enum>
+                  <item name="EdgeZone" value="&quot;EdgeZone&quot;"/>
+                </enum>
+              </arg>
+            </arg>
             <arg type="ResourceId" var="@PublicIPAddress_update.id" options="id">
+              <help short="Resource ID."/>
               <format template="/subscriptions/{}/resourceGroups/{}/providers/Microsoft.Network/publicIPAddresses/{}"/>
             </arg>
-            <arg type="ResourceLocation" var="@PublicIPAddress_update.location" options="location l"/>
+            <arg type="ResourceLocation" var="@PublicIPAddress_update.location" options="location l">
+              <help short="Resource location."/>
+            </arg>
             <arg type="object" var="@PublicIPAddress_update.properties.ddosSettings" options="ddos-settings" group="Properties">
-              <arg type="@SubResource_update" var="@PublicIPAddress_update.properties.ddosSettings.ddosProtectionPlan" options="ddos-protection-plan"/>
+              <help short="The DDoS protection custom policy associated with the public IP address."/>
+              <arg type="@SubResource_update" var="@PublicIPAddress_update.properties.ddosSettings.ddosProtectionPlan" options="ddos-protection-plan">
+                <help short="The DDoS protection plan associated with the public IP. Can only be set if ProtectionMode is Enabled"/>
+              </arg>
               <arg type="string" var="@PublicIPAddress_update.properties.ddosSettings.protectionMode" options="protection-mode">
+                <help short="The DDoS protection mode of the public IP"/>
                 <enum>
                   <item name="Disabled" value="&quot;Disabled&quot;"/>
                   <item name="Enabled" value="&quot;Enabled&quot;"/>
@@ -8783,26 +8827,46 @@
               </arg>
             </arg>
             <arg type="string" var="@PublicIPAddress_update.properties.deleteOption" options="delete-option" group="Properties">
+              <help short="Specify what happens to the public IP address when the VM using it is deleted"/>
               <enum>
                 <item name="Delete" value="&quot;Delete&quot;"/>
                 <item name="Detach" value="&quot;Detach&quot;"/>
               </enum>
             </arg>
             <arg type="object" var="@PublicIPAddress_update.properties.dnsSettings" options="dns-settings" group="Properties">
-              <arg type="string" var="@PublicIPAddress_update.properties.dnsSettings.domainNameLabel" options="domain-name-label"/>
-              <arg type="string" var="@PublicIPAddress_update.properties.dnsSettings.fqdn" options="fqdn"/>
-              <arg type="string" var="@PublicIPAddress_update.properties.dnsSettings.reverseFqdn" options="reverse-fqdn"/>
+              <help short="The FQDN of the DNS record associated with the public IP address."/>
+              <arg type="string" var="@PublicIPAddress_update.properties.dnsSettings.domainNameLabel" options="domain-name-label">
+                <help short="The domain name label. The concatenation of the domain name label and the regionalized DNS zone make up the fully qualified domain name associated with the public IP address. If a domain name label is specified, an A DNS record is created for the public IP in the Microsoft Azure DNS system."/>
+              </arg>
+              <arg type="string" var="@PublicIPAddress_update.properties.dnsSettings.fqdn" options="fqdn">
+                <help short="The Fully Qualified Domain Name of the A DNS record associated with the public IP. This is the concatenation of the domainNameLabel and the regionalized DNS zone."/>
+              </arg>
+              <arg type="string" var="@PublicIPAddress_update.properties.dnsSettings.reverseFqdn" options="reverse-fqdn">
+                <help short="The reverse FQDN. A user-visible, fully qualified domain name that resolves to this public IP address. If the reverseFqdn is specified, then a PTR DNS record is created pointing from the IP address in the in-addr.arpa domain to the reverse FQDN."/>
+              </arg>
             </arg>
-            <arg type="integer32" var="@PublicIPAddress_update.properties.idleTimeoutInMinutes" options="idle-timeout-in-minutes" group="Properties"/>
-            <arg type="string" var="@PublicIPAddress_update.properties.ipAddress" options="ip-address" group="Properties"/>
+            <arg type="integer32" var="@PublicIPAddress_update.properties.idleTimeoutInMinutes" options="idle-timeout-in-minutes" group="Properties">
+              <help short="The idle timeout of the public IP address."/>
+            </arg>
+            <arg type="string" var="@PublicIPAddress_update.properties.ipAddress" options="ip-address" group="Properties">
+              <help short="The IP address associated with the public IP address resource."/>
+            </arg>
             <arg type="array<object>" var="@PublicIPAddress_update.properties.ipTags" options="ip-tags" group="Properties">
+              <help short="The list of tags associated with the public IP address."/>
               <item type="object">
-                <arg type="string" var="@PublicIPAddress_update.properties.ipTags[].ipTagType" options="ip-tag-type"/>
-                <arg type="string" var="@PublicIPAddress_update.properties.ipTags[].tag" options="tag"/>
+                <arg type="string" var="@PublicIPAddress_update.properties.ipTags[].ipTagType" options="ip-tag-type">
+                  <help short="The IP tag type. Example: FirstPartyUsage."/>
+                </arg>
+                <arg type="string" var="@PublicIPAddress_update.properties.ipTags[].tag" options="tag">
+                  <help short="The value of the IP tag associated with the public IP. Example: SQL."/>
+                </arg>
               </item>
             </arg>
-            <arg type="@PublicIPAddress_update" var="@PublicIPAddress_update.properties.linkedPublicIPAddress" options="linked-public-ip-address" group="Properties"/>
+            <arg type="@PublicIPAddress_update" var="@PublicIPAddress_update.properties.linkedPublicIPAddress" options="linked-public-ip-address" group="Properties">
+              <help short="The linked public IP address of the public IP address resource."/>
+            </arg>
             <arg type="string" var="@PublicIPAddress_update.properties.migrationPhase" options="migration-phase" group="Properties">
+              <help short="Migration phase of Public IP Address."/>
               <enum>
                 <item name="Abort" value="&quot;Abort&quot;"/>
                 <item name="Commit" value="&quot;Commit&quot;"/>
@@ -8812,55 +8876,76 @@
               </enum>
             </arg>
             <arg type="object" var="@PublicIPAddress_update.properties.natGateway" options="nat-gateway" group="Properties">
+              <help short="The NatGateway for the Public IP address."/>
               <arg type="ResourceId" var="@PublicIPAddress_update.properties.natGateway.id" options="id">
+                <help short="Resource ID."/>
                 <format template="/subscriptions/{}/resourceGroups/{}/providers/Microsoft.Network/natGateways/{}"/>
               </arg>
-              <arg type="ResourceLocation" var="@PublicIPAddress_update.properties.natGateway.location" options="location l"/>
-              <arg type="integer32" var="@PublicIPAddress_update.properties.natGateway.properties.idleTimeoutInMinutes" options="idle-timeout-in-minutes" group="Properties"/>
+              <arg type="ResourceLocation" var="@PublicIPAddress_update.properties.natGateway.location" options="location l">
+                <help short="Resource location."/>
+              </arg>
+              <arg type="integer32" var="@PublicIPAddress_update.properties.natGateway.properties.idleTimeoutInMinutes" options="idle-timeout-in-minutes" group="Properties">
+                <help short="The idle timeout of the nat gateway."/>
+              </arg>
               <arg type="array<@SubResource_update>" var="@PublicIPAddress_update.properties.natGateway.properties.publicIpAddresses" options="public-ip-addresses" group="Properties">
+                <help short="An array of public ip addresses associated with the nat gateway resource."/>
                 <item type="@SubResource_update"/>
               </arg>
               <arg type="array<@SubResource_update>" var="@PublicIPAddress_update.properties.natGateway.properties.publicIpPrefixes" options="public-ip-prefixes" group="Properties">
+                <help short="An array of public ip prefixes associated with the nat gateway resource."/>
                 <item type="@SubResource_update"/>
               </arg>
               <arg type="object" var="@PublicIPAddress_update.properties.natGateway.sku" options="sku">
+                <help short="The nat gateway SKU."/>
                 <arg type="string" var="@PublicIPAddress_update.properties.natGateway.sku.name" options="name">
+                  <help short="Name of Nat Gateway SKU."/>
                   <enum>
                     <item name="Standard" value="&quot;Standard&quot;"/>
                   </enum>
                 </arg>
               </arg>
               <arg type="object" var="@PublicIPAddress_update.properties.natGateway.tags" options="tags">
+                <help short="Resource tags."/>
                 <additionalProp>
                   <item type="string"/>
                 </additionalProp>
               </arg>
               <arg type="array<string>" var="@PublicIPAddress_update.properties.natGateway.zones" options="zones">
+                <help short="A list of availability zones denoting the zone in which Nat Gateway should be deployed."/>
                 <item type="string"/>
               </arg>
             </arg>
             <arg type="string" var="@PublicIPAddress_update.properties.publicIPAddressVersion" options="public-ip-address-version" group="Properties">
+              <help short="The public IP address version."/>
               <enum>
                 <item name="IPv4" value="&quot;IPv4&quot;"/>
                 <item name="IPv6" value="&quot;IPv6&quot;"/>
               </enum>
             </arg>
             <arg type="string" var="@PublicIPAddress_update.properties.publicIPAllocationMethod" options="public-ip-allocation-method" group="Properties">
+              <help short="The public IP address allocation method."/>
               <enum>
                 <item name="Dynamic" value="&quot;Dynamic&quot;"/>
                 <item name="Static" value="&quot;Static&quot;"/>
               </enum>
             </arg>
-            <arg type="@SubResource_update" var="@PublicIPAddress_update.properties.publicIPPrefix" options="public-ip-prefix" group="Properties"/>
-            <arg type="@PublicIPAddress_update" var="@PublicIPAddress_update.properties.servicePublicIPAddress" options="service-public-ip-address" group="Properties"/>
+            <arg type="@SubResource_update" var="@PublicIPAddress_update.properties.publicIPPrefix" options="public-ip-prefix" group="Properties">
+              <help short="The Public IP Prefix this Public IP Address should be allocated from."/>
+            </arg>
+            <arg type="@PublicIPAddress_update" var="@PublicIPAddress_update.properties.servicePublicIPAddress" options="service-public-ip-address" group="Properties">
+              <help short="The service public IP address of the public IP address resource."/>
+            </arg>
             <arg type="object" var="@PublicIPAddress_update.sku" options="sku">
+              <help short="The public IP address SKU."/>
               <arg type="string" var="@PublicIPAddress_update.sku.name" options="name">
+                <help short="Name of a public IP address SKU."/>
                 <enum>
                   <item name="Basic" value="&quot;Basic&quot;"/>
                   <item name="Standard" value="&quot;Standard&quot;"/>
                 </enum>
               </arg>
               <arg type="string" var="@PublicIPAddress_update.sku.tier" options="tier">
+                <help short="Tier of a public IP address SKU."/>
                 <enum>
                   <item name="Global" value="&quot;Global&quot;"/>
                   <item name="Regional" value="&quot;Regional&quot;"/>
@@ -8868,11 +8953,13 @@
               </arg>
             </arg>
             <arg type="object" var="@PublicIPAddress_update.tags" options="tags">
+              <help short="Resource tags."/>
               <additionalProp>
                 <item type="string"/>
               </additionalProp>
             </arg>
             <arg type="array<string>" var="@PublicIPAddress_update.zones" options="zones">
+              <help short="A list of availability zones denoting the IP allocated for the resource needs to come from."/>
               <item type="string"/>
             </arg>
           </arg>
@@ -8889,29 +8976,40 @@
           <arg type="object" var="$parameters.properties.frontendIPConfigurations[].properties.publicIPAddress.properties.natGateway" options="public-ip-address-nat-gateway" hide="True" group="PublicIpAddress">
             <help short="nat-gateway"/>
             <arg type="ResourceId" var="$parameters.properties.frontendIPConfigurations[].properties.publicIPAddress.properties.natGateway.id" options="id">
+              <help short="Resource ID."/>
               <format template="/subscriptions/{}/resourceGroups/{}/providers/Microsoft.Network/natGateways/{}"/>
             </arg>
-            <arg type="ResourceLocation" var="$parameters.properties.frontendIPConfigurations[].properties.publicIPAddress.properties.natGateway.location" options="location l"/>
-            <arg type="integer32" var="$parameters.properties.frontendIPConfigurations[].properties.publicIPAddress.properties.natGateway.properties.idleTimeoutInMinutes" options="idle-timeout-in-minutes" group="Properties"/>
+            <arg type="ResourceLocation" var="$parameters.properties.frontendIPConfigurations[].properties.publicIPAddress.properties.natGateway.location" options="location l">
+              <help short="Resource location."/>
+            </arg>
+            <arg type="integer32" var="$parameters.properties.frontendIPConfigurations[].properties.publicIPAddress.properties.natGateway.properties.idleTimeoutInMinutes" options="idle-timeout-in-minutes" group="Properties">
+              <help short="The idle timeout of the nat gateway."/>
+            </arg>
             <arg type="array<@SubResource_update>" var="$parameters.properties.frontendIPConfigurations[].properties.publicIPAddress.properties.natGateway.properties.publicIpAddresses" options="public-ip-addresses" group="Properties">
+              <help short="An array of public ip addresses associated with the nat gateway resource."/>
               <item type="@SubResource_update"/>
             </arg>
             <arg type="array<@SubResource_update>" var="$parameters.properties.frontendIPConfigurations[].properties.publicIPAddress.properties.natGateway.properties.publicIpPrefixes" options="public-ip-prefixes" group="Properties">
+              <help short="An array of public ip prefixes associated with the nat gateway resource."/>
               <item type="@SubResource_update"/>
             </arg>
             <arg type="object" var="$parameters.properties.frontendIPConfigurations[].properties.publicIPAddress.properties.natGateway.sku" options="sku">
+              <help short="The nat gateway SKU."/>
               <arg type="string" var="$parameters.properties.frontendIPConfigurations[].properties.publicIPAddress.properties.natGateway.sku.name" options="name">
+                <help short="Name of Nat Gateway SKU."/>
                 <enum>
                   <item name="Standard" value="&quot;Standard&quot;"/>
                 </enum>
               </arg>
             </arg>
             <arg type="object" var="$parameters.properties.frontendIPConfigurations[].properties.publicIPAddress.properties.natGateway.tags" options="tags">
+              <help short="Resource tags."/>
               <additionalProp>
                 <item type="string"/>
               </additionalProp>
             </arg>
             <arg type="array<string>" var="$parameters.properties.frontendIPConfigurations[].properties.publicIPAddress.properties.natGateway.zones" options="zones">
+              <help short="A list of availability zones denoting the zone in which Nat Gateway should be deployed."/>
               <item type="string"/>
             </arg>
           </arg>
@@ -8938,12 +9036,14 @@
           <arg type="object" var="$parameters.properties.frontendIPConfigurations[].properties.publicIPAddress.sku" options="public-ip-address-sku" hide="True" group="PublicIpAddress">
             <help short="sku"/>
             <arg type="string" var="$parameters.properties.frontendIPConfigurations[].properties.publicIPAddress.sku.name" options="name">
+              <help short="Name of a public IP address SKU."/>
               <enum>
                 <item name="Basic" value="&quot;Basic&quot;"/>
                 <item name="Standard" value="&quot;Standard&quot;"/>
               </enum>
             </arg>
             <arg type="string" var="$parameters.properties.frontendIPConfigurations[].properties.publicIPAddress.sku.tier" options="tier">
+              <help short="Tier of a public IP address SKU."/>
               <enum>
                 <item name="Global" value="&quot;Global&quot;"/>
                 <item name="Regional" value="&quot;Regional&quot;"/>
@@ -11256,7 +11356,9 @@
           </arg>
           <arg nullable="True" type="object" var="$parameters.properties.frontendIPConfigurations[].properties.publicIPPrefix" options="public-ip-prefix" group="Properties">
             <help short="The reference to the Public IP Prefix resource."/>
-            <arg nullable="True" type="string" var="$parameters.properties.frontendIPConfigurations[].properties.publicIPPrefix.id" options="id"/>
+            <arg nullable="True" type="string" var="$parameters.properties.frontendIPConfigurations[].properties.publicIPPrefix.id" options="id">
+              <help short="Resource ID."/>
+            </arg>
           </arg>
           <arg nullable="True" type="ResourceId" var="$parameters.properties.frontendIPConfigurations[].properties.subnet.id" options="subnet" group="Properties">
             <help short="Resource ID."/>
@@ -11266,8 +11368,11 @@
         <argGroup name="PublicIpAddress">
           <arg nullable="True" type="object" var="$parameters.properties.frontendIPConfigurations[].properties.publicIPAddress.extendedLocation" options="public-ip-address-extended-location" hide="True" group="PublicIpAddress" cls="ExtendedLocation_update">
             <help short="extended location"/>
-            <arg nullable="True" type="string" var="@ExtendedLocation_update.name" options="name"/>
+            <arg nullable="True" type="string" var="@ExtendedLocation_update.name" options="name">
+              <help short="The name of the extended location."/>
+            </arg>
             <arg nullable="True" type="string" var="@ExtendedLocation_update.type" options="type">
+              <help short="The type of the extended location."/>
               <enum>
                 <item name="EdgeZone" value="&quot;EdgeZone&quot;"/>
               </enum>
@@ -11278,8 +11383,11 @@
           </arg>
           <arg nullable="True" type="object" var="$parameters.properties.frontendIPConfigurations[].properties.publicIPAddress.properties.ddosSettings" options="public-ip-address-ddos-settings" hide="True" group="PublicIpAddress">
             <help short="ddos settings"/>
-            <arg nullable="True" type="@SubResource_update" var="$parameters.properties.frontendIPConfigurations[].properties.publicIPAddress.properties.ddosSettings.ddosProtectionPlan" options="ddos-protection-plan"/>
+            <arg nullable="True" type="@SubResource_update" var="$parameters.properties.frontendIPConfigurations[].properties.publicIPAddress.properties.ddosSettings.ddosProtectionPlan" options="ddos-protection-plan">
+              <help short="The DDoS protection plan associated with the public IP. Can only be set if ProtectionMode is Enabled"/>
+            </arg>
             <arg nullable="True" type="string" var="$parameters.properties.frontendIPConfigurations[].properties.publicIPAddress.properties.ddosSettings.protectionMode" options="protection-mode">
+              <help short="The DDoS protection mode of the public IP"/>
               <enum>
                 <item name="Disabled" value="&quot;Disabled&quot;"/>
                 <item name="Enabled" value="&quot;Enabled&quot;"/>
@@ -11296,9 +11404,15 @@
           </arg>
           <arg nullable="True" type="object" var="$parameters.properties.frontendIPConfigurations[].properties.publicIPAddress.properties.dnsSettings" options="public-ip-address-dns-settings" hide="True" group="PublicIpAddress">
             <help short="dns settings"/>
-            <arg nullable="True" type="string" var="$parameters.properties.frontendIPConfigurations[].properties.publicIPAddress.properties.dnsSettings.domainNameLabel" options="domain-name-label"/>
-            <arg nullable="True" type="string" var="$parameters.properties.frontendIPConfigurations[].properties.publicIPAddress.properties.dnsSettings.fqdn" options="fqdn"/>
-            <arg nullable="True" type="string" var="$parameters.properties.frontendIPConfigurations[].properties.publicIPAddress.properties.dnsSettings.reverseFqdn" options="reverse-fqdn"/>
+            <arg nullable="True" type="string" var="$parameters.properties.frontendIPConfigurations[].properties.publicIPAddress.properties.dnsSettings.domainNameLabel" options="domain-name-label">
+              <help short="The domain name label. The concatenation of the domain name label and the regionalized DNS zone make up the fully qualified domain name associated with the public IP address. If a domain name label is specified, an A DNS record is created for the public IP in the Microsoft Azure DNS system."/>
+            </arg>
+            <arg nullable="True" type="string" var="$parameters.properties.frontendIPConfigurations[].properties.publicIPAddress.properties.dnsSettings.fqdn" options="fqdn">
+              <help short="The Fully Qualified Domain Name of the A DNS record associated with the public IP. This is the concatenation of the domainNameLabel and the regionalized DNS zone."/>
+            </arg>
+            <arg nullable="True" type="string" var="$parameters.properties.frontendIPConfigurations[].properties.publicIPAddress.properties.dnsSettings.reverseFqdn" options="reverse-fqdn">
+              <help short="The reverse FQDN. A user-visible, fully qualified domain name that resolves to this public IP address. If the reverseFqdn is specified, then a PTR DNS record is created pointing from the IP address in the in-addr.arpa domain to the reverse FQDN."/>
+            </arg>
           </arg>
           <arg nullable="True" type="integer32" var="$parameters.properties.frontendIPConfigurations[].properties.publicIPAddress.properties.idleTimeoutInMinutes" options="public-ip-address-idle-timeout-in-minutes" hide="True" group="PublicIpAddress">
             <help short="idle timeout in minutes"/>
@@ -11309,20 +11423,42 @@
           <arg nullable="True" type="array<object>" var="$parameters.properties.frontendIPConfigurations[].properties.publicIPAddress.properties.ipTags" options="public-ip-address-ip-tags" hide="True" group="PublicIpAddress">
             <help short="ip-tags"/>
             <item nullable="True" type="object">
-              <arg nullable="True" type="string" var="$parameters.properties.frontendIPConfigurations[].properties.publicIPAddress.properties.ipTags[].ipTagType" options="ip-tag-type"/>
-              <arg nullable="True" type="string" var="$parameters.properties.frontendIPConfigurations[].properties.publicIPAddress.properties.ipTags[].tag" options="tag"/>
+              <arg nullable="True" type="string" var="$parameters.properties.frontendIPConfigurations[].properties.publicIPAddress.properties.ipTags[].ipTagType" options="ip-tag-type">
+                <help short="The IP tag type. Example: FirstPartyUsage."/>
+              </arg>
+              <arg nullable="True" type="string" var="$parameters.properties.frontendIPConfigurations[].properties.publicIPAddress.properties.ipTags[].tag" options="tag">
+                <help short="The value of the IP tag associated with the public IP. Example: SQL."/>
+              </arg>
             </item>
           </arg>
           <arg nullable="True" type="object" var="$parameters.properties.frontendIPConfigurations[].properties.publicIPAddress.properties.linkedPublicIPAddress" options="public-ip-address-linked-public-ip-address" hide="True" group="PublicIpAddress" cls="PublicIPAddress_update">
             <help short="linked-public-ip-address"/>
-            <arg nullable="True" type="@ExtendedLocation_update" var="@PublicIPAddress_update.extendedLocation" options="extended-location"/>
+            <arg nullable="True" type="object" var="@PublicIPAddress_update.extendedLocation" options="extended-location" cls="ExtendedLocation_update">
+              <help short="The extended location of the public ip address."/>
+              <arg nullable="True" type="string" var="@ExtendedLocation_update.name" options="name">
+                <help short="The name of the extended location."/>
+              </arg>
+              <arg nullable="True" type="string" var="@ExtendedLocation_update.type" options="type">
+                <help short="The type of the extended location."/>
+                <enum>
+                  <item name="EdgeZone" value="&quot;EdgeZone&quot;"/>
+                </enum>
+              </arg>
+            </arg>
             <arg nullable="True" type="ResourceId" var="@PublicIPAddress_update.id" options="id">
+              <help short="Resource ID."/>
               <format template="/subscriptions/{}/resourceGroups/{}/providers/Microsoft.Network/publicIPAddresses/{}"/>
             </arg>
-            <arg nullable="True" type="ResourceLocation" var="@PublicIPAddress_update.location" options="location l"/>
+            <arg nullable="True" type="ResourceLocation" var="@PublicIPAddress_update.location" options="location l">
+              <help short="Resource location."/>
+            </arg>
             <arg nullable="True" type="object" var="@PublicIPAddress_update.properties.ddosSettings" options="ddos-settings" group="Properties">
-              <arg nullable="True" type="@SubResource_update" var="@PublicIPAddress_update.properties.ddosSettings.ddosProtectionPlan" options="ddos-protection-plan"/>
+              <help short="The DDoS protection custom policy associated with the public IP address."/>
+              <arg nullable="True" type="@SubResource_update" var="@PublicIPAddress_update.properties.ddosSettings.ddosProtectionPlan" options="ddos-protection-plan">
+                <help short="The DDoS protection plan associated with the public IP. Can only be set if ProtectionMode is Enabled"/>
+              </arg>
               <arg nullable="True" type="string" var="@PublicIPAddress_update.properties.ddosSettings.protectionMode" options="protection-mode">
+                <help short="The DDoS protection mode of the public IP"/>
                 <enum>
                   <item name="Disabled" value="&quot;Disabled&quot;"/>
                   <item name="Enabled" value="&quot;Enabled&quot;"/>
@@ -11331,26 +11467,46 @@
               </arg>
             </arg>
             <arg nullable="True" type="string" var="@PublicIPAddress_update.properties.deleteOption" options="delete-option" group="Properties">
+              <help short="Specify what happens to the public IP address when the VM using it is deleted"/>
               <enum>
                 <item name="Delete" value="&quot;Delete&quot;"/>
                 <item name="Detach" value="&quot;Detach&quot;"/>
               </enum>
             </arg>
             <arg nullable="True" type="object" var="@PublicIPAddress_update.properties.dnsSettings" options="dns-settings" group="Properties">
-              <arg nullable="True" type="string" var="@PublicIPAddress_update.properties.dnsSettings.domainNameLabel" options="domain-name-label"/>
-              <arg nullable="True" type="string" var="@PublicIPAddress_update.properties.dnsSettings.fqdn" options="fqdn"/>
-              <arg nullable="True" type="string" var="@PublicIPAddress_update.properties.dnsSettings.reverseFqdn" options="reverse-fqdn"/>
+              <help short="The FQDN of the DNS record associated with the public IP address."/>
+              <arg nullable="True" type="string" var="@PublicIPAddress_update.properties.dnsSettings.domainNameLabel" options="domain-name-label">
+                <help short="The domain name label. The concatenation of the domain name label and the regionalized DNS zone make up the fully qualified domain name associated with the public IP address. If a domain name label is specified, an A DNS record is created for the public IP in the Microsoft Azure DNS system."/>
+              </arg>
+              <arg nullable="True" type="string" var="@PublicIPAddress_update.properties.dnsSettings.fqdn" options="fqdn">
+                <help short="The Fully Qualified Domain Name of the A DNS record associated with the public IP. This is the concatenation of the domainNameLabel and the regionalized DNS zone."/>
+              </arg>
+              <arg nullable="True" type="string" var="@PublicIPAddress_update.properties.dnsSettings.reverseFqdn" options="reverse-fqdn">
+                <help short="The reverse FQDN. A user-visible, fully qualified domain name that resolves to this public IP address. If the reverseFqdn is specified, then a PTR DNS record is created pointing from the IP address in the in-addr.arpa domain to the reverse FQDN."/>
+              </arg>
             </arg>
-            <arg nullable="True" type="integer32" var="@PublicIPAddress_update.properties.idleTimeoutInMinutes" options="idle-timeout-in-minutes" group="Properties"/>
-            <arg nullable="True" type="string" var="@PublicIPAddress_update.properties.ipAddress" options="ip-address" group="Properties"/>
+            <arg nullable="True" type="integer32" var="@PublicIPAddress_update.properties.idleTimeoutInMinutes" options="idle-timeout-in-minutes" group="Properties">
+              <help short="The idle timeout of the public IP address."/>
+            </arg>
+            <arg nullable="True" type="string" var="@PublicIPAddress_update.properties.ipAddress" options="ip-address" group="Properties">
+              <help short="The IP address associated with the public IP address resource."/>
+            </arg>
             <arg nullable="True" type="array<object>" var="@PublicIPAddress_update.properties.ipTags" options="ip-tags" group="Properties">
+              <help short="The list of tags associated with the public IP address."/>
               <item nullable="True" type="object">
-                <arg nullable="True" type="string" var="@PublicIPAddress_update.properties.ipTags[].ipTagType" options="ip-tag-type"/>
-                <arg nullable="True" type="string" var="@PublicIPAddress_update.properties.ipTags[].tag" options="tag"/>
+                <arg nullable="True" type="string" var="@PublicIPAddress_update.properties.ipTags[].ipTagType" options="ip-tag-type">
+                  <help short="The IP tag type. Example: FirstPartyUsage."/>
+                </arg>
+                <arg nullable="True" type="string" var="@PublicIPAddress_update.properties.ipTags[].tag" options="tag">
+                  <help short="The value of the IP tag associated with the public IP. Example: SQL."/>
+                </arg>
               </item>
             </arg>
-            <arg nullable="True" type="@PublicIPAddress_update" var="@PublicIPAddress_update.properties.linkedPublicIPAddress" options="linked-public-ip-address" group="Properties"/>
+            <arg nullable="True" type="@PublicIPAddress_update" var="@PublicIPAddress_update.properties.linkedPublicIPAddress" options="linked-public-ip-address" group="Properties">
+              <help short="The linked public IP address of the public IP address resource."/>
+            </arg>
             <arg nullable="True" type="string" var="@PublicIPAddress_update.properties.migrationPhase" options="migration-phase" group="Properties">
+              <help short="Migration phase of Public IP Address."/>
               <enum>
                 <item name="Abort" value="&quot;Abort&quot;"/>
                 <item name="Commit" value="&quot;Commit&quot;"/>
@@ -11360,55 +11516,76 @@
               </enum>
             </arg>
             <arg nullable="True" type="object" var="@PublicIPAddress_update.properties.natGateway" options="nat-gateway" group="Properties">
+              <help short="The NatGateway for the Public IP address."/>
               <arg nullable="True" type="ResourceId" var="@PublicIPAddress_update.properties.natGateway.id" options="id">
+                <help short="Resource ID."/>
                 <format template="/subscriptions/{}/resourceGroups/{}/providers/Microsoft.Network/natGateways/{}"/>
               </arg>
-              <arg nullable="True" type="ResourceLocation" var="@PublicIPAddress_update.properties.natGateway.location" options="location l"/>
-              <arg nullable="True" type="integer32" var="@PublicIPAddress_update.properties.natGateway.properties.idleTimeoutInMinutes" options="idle-timeout-in-minutes" group="Properties"/>
+              <arg nullable="True" type="ResourceLocation" var="@PublicIPAddress_update.properties.natGateway.location" options="location l">
+                <help short="Resource location."/>
+              </arg>
+              <arg nullable="True" type="integer32" var="@PublicIPAddress_update.properties.natGateway.properties.idleTimeoutInMinutes" options="idle-timeout-in-minutes" group="Properties">
+                <help short="The idle timeout of the nat gateway."/>
+              </arg>
               <arg nullable="True" type="array<@SubResource_update>" var="@PublicIPAddress_update.properties.natGateway.properties.publicIpAddresses" options="public-ip-addresses" group="Properties">
+                <help short="An array of public ip addresses associated with the nat gateway resource."/>
                 <item nullable="True" type="@SubResource_update"/>
               </arg>
               <arg nullable="True" type="array<@SubResource_update>" var="@PublicIPAddress_update.properties.natGateway.properties.publicIpPrefixes" options="public-ip-prefixes" group="Properties">
+                <help short="An array of public ip prefixes associated with the nat gateway resource."/>
                 <item nullable="True" type="@SubResource_update"/>
               </arg>
               <arg nullable="True" type="object" var="@PublicIPAddress_update.properties.natGateway.sku" options="sku">
+                <help short="The nat gateway SKU."/>
                 <arg nullable="True" type="string" var="@PublicIPAddress_update.properties.natGateway.sku.name" options="name">
+                  <help short="Name of Nat Gateway SKU."/>
                   <enum>
                     <item name="Standard" value="&quot;Standard&quot;"/>
                   </enum>
                 </arg>
               </arg>
               <arg nullable="True" type="object" var="@PublicIPAddress_update.properties.natGateway.tags" options="tags">
+                <help short="Resource tags."/>
                 <additionalProp>
                   <item nullable="True" type="string"/>
                 </additionalProp>
               </arg>
               <arg nullable="True" type="array<string>" var="@PublicIPAddress_update.properties.natGateway.zones" options="zones">
+                <help short="A list of availability zones denoting the zone in which Nat Gateway should be deployed."/>
                 <item nullable="True" type="string"/>
               </arg>
             </arg>
             <arg nullable="True" type="string" var="@PublicIPAddress_update.properties.publicIPAddressVersion" options="public-ip-address-version" group="Properties">
+              <help short="The public IP address version."/>
               <enum>
                 <item name="IPv4" value="&quot;IPv4&quot;"/>
                 <item name="IPv6" value="&quot;IPv6&quot;"/>
               </enum>
             </arg>
             <arg nullable="True" type="string" var="@PublicIPAddress_update.properties.publicIPAllocationMethod" options="public-ip-allocation-method" group="Properties">
+              <help short="The public IP address allocation method."/>
               <enum>
                 <item name="Dynamic" value="&quot;Dynamic&quot;"/>
                 <item name="Static" value="&quot;Static&quot;"/>
               </enum>
             </arg>
-            <arg nullable="True" type="@SubResource_update" var="@PublicIPAddress_update.properties.publicIPPrefix" options="public-ip-prefix" group="Properties"/>
-            <arg nullable="True" type="@PublicIPAddress_update" var="@PublicIPAddress_update.properties.servicePublicIPAddress" options="service-public-ip-address" group="Properties"/>
+            <arg nullable="True" type="@SubResource_update" var="@PublicIPAddress_update.properties.publicIPPrefix" options="public-ip-prefix" group="Properties">
+              <help short="The Public IP Prefix this Public IP Address should be allocated from."/>
+            </arg>
+            <arg nullable="True" type="@PublicIPAddress_update" var="@PublicIPAddress_update.properties.servicePublicIPAddress" options="service-public-ip-address" group="Properties">
+              <help short="The service public IP address of the public IP address resource."/>
+            </arg>
             <arg nullable="True" type="object" var="@PublicIPAddress_update.sku" options="sku">
+              <help short="The public IP address SKU."/>
               <arg nullable="True" type="string" var="@PublicIPAddress_update.sku.name" options="name">
+                <help short="Name of a public IP address SKU."/>
                 <enum>
                   <item name="Basic" value="&quot;Basic&quot;"/>
                   <item name="Standard" value="&quot;Standard&quot;"/>
                 </enum>
               </arg>
               <arg nullable="True" type="string" var="@PublicIPAddress_update.sku.tier" options="tier">
+                <help short="Tier of a public IP address SKU."/>
                 <enum>
                   <item name="Global" value="&quot;Global&quot;"/>
                   <item name="Regional" value="&quot;Regional&quot;"/>
@@ -11416,11 +11593,13 @@
               </arg>
             </arg>
             <arg nullable="True" type="object" var="@PublicIPAddress_update.tags" options="tags">
+              <help short="Resource tags."/>
               <additionalProp>
                 <item nullable="True" type="string"/>
               </additionalProp>
             </arg>
             <arg nullable="True" type="array<string>" var="@PublicIPAddress_update.zones" options="zones">
+              <help short="A list of availability zones denoting the IP allocated for the resource needs to come from."/>
               <item nullable="True" type="string"/>
             </arg>
           </arg>
@@ -11437,29 +11616,40 @@
           <arg nullable="True" type="object" var="$parameters.properties.frontendIPConfigurations[].properties.publicIPAddress.properties.natGateway" options="public-ip-address-nat-gateway" hide="True" group="PublicIpAddress">
             <help short="nat-gateway"/>
             <arg nullable="True" type="ResourceId" var="$parameters.properties.frontendIPConfigurations[].properties.publicIPAddress.properties.natGateway.id" options="id">
+              <help short="Resource ID."/>
               <format template="/subscriptions/{}/resourceGroups/{}/providers/Microsoft.Network/natGateways/{}"/>
             </arg>
-            <arg nullable="True" type="ResourceLocation" var="$parameters.properties.frontendIPConfigurations[].properties.publicIPAddress.properties.natGateway.location" options="location l"/>
-            <arg nullable="True" type="integer32" var="$parameters.properties.frontendIPConfigurations[].properties.publicIPAddress.properties.natGateway.properties.idleTimeoutInMinutes" options="idle-timeout-in-minutes" group="Properties"/>
+            <arg nullable="True" type="ResourceLocation" var="$parameters.properties.frontendIPConfigurations[].properties.publicIPAddress.properties.natGateway.location" options="location l">
+              <help short="Resource location."/>
+            </arg>
+            <arg nullable="True" type="integer32" var="$parameters.properties.frontendIPConfigurations[].properties.publicIPAddress.properties.natGateway.properties.idleTimeoutInMinutes" options="idle-timeout-in-minutes" group="Properties">
+              <help short="The idle timeout of the nat gateway."/>
+            </arg>
             <arg nullable="True" type="array<@SubResource_update>" var="$parameters.properties.frontendIPConfigurations[].properties.publicIPAddress.properties.natGateway.properties.publicIpAddresses" options="public-ip-addresses" group="Properties">
+              <help short="An array of public ip addresses associated with the nat gateway resource."/>
               <item nullable="True" type="@SubResource_update"/>
             </arg>
             <arg nullable="True" type="array<@SubResource_update>" var="$parameters.properties.frontendIPConfigurations[].properties.publicIPAddress.properties.natGateway.properties.publicIpPrefixes" options="public-ip-prefixes" group="Properties">
+              <help short="An array of public ip prefixes associated with the nat gateway resource."/>
               <item nullable="True" type="@SubResource_update"/>
             </arg>
             <arg nullable="True" type="object" var="$parameters.properties.frontendIPConfigurations[].properties.publicIPAddress.properties.natGateway.sku" options="sku">
+              <help short="The nat gateway SKU."/>
               <arg nullable="True" type="string" var="$parameters.properties.frontendIPConfigurations[].properties.publicIPAddress.properties.natGateway.sku.name" options="name">
+                <help short="Name of Nat Gateway SKU."/>
                 <enum>
                   <item name="Standard" value="&quot;Standard&quot;"/>
                 </enum>
               </arg>
             </arg>
             <arg nullable="True" type="object" var="$parameters.properties.frontendIPConfigurations[].properties.publicIPAddress.properties.natGateway.tags" options="tags">
+              <help short="Resource tags."/>
               <additionalProp>
                 <item nullable="True" type="string"/>
               </additionalProp>
             </arg>
             <arg nullable="True" type="array<string>" var="$parameters.properties.frontendIPConfigurations[].properties.publicIPAddress.properties.natGateway.zones" options="zones">
+              <help short="A list of availability zones denoting the zone in which Nat Gateway should be deployed."/>
               <item nullable="True" type="string"/>
             </arg>
           </arg>
@@ -11486,12 +11676,14 @@
           <arg nullable="True" type="object" var="$parameters.properties.frontendIPConfigurations[].properties.publicIPAddress.sku" options="public-ip-address-sku" hide="True" group="PublicIpAddress">
             <help short="sku"/>
             <arg nullable="True" type="string" var="$parameters.properties.frontendIPConfigurations[].properties.publicIPAddress.sku.name" options="name">
+              <help short="Name of a public IP address SKU."/>
               <enum>
                 <item name="Basic" value="&quot;Basic&quot;"/>
                 <item name="Standard" value="&quot;Standard&quot;"/>
               </enum>
             </arg>
             <arg nullable="True" type="string" var="$parameters.properties.frontendIPConfigurations[].properties.publicIPAddress.sku.tier" options="tier">
+              <help short="Tier of a public IP address SKU."/>
               <enum>
                 <item name="Global" value="&quot;Global&quot;"/>
                 <item name="Regional" value="&quot;Regional&quot;"/>

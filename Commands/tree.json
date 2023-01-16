@@ -10804,6 +10804,14 @@
                     ],
                     "versions": [
                       {
+                        "examples": [
+                          {
+                            "commands": [
+                              "network lb frontend-ip delete -g MyResourceGroup --lb-name MyLb -n MyFrontendIp"
+                            ],
+                            "name": "Delete a frontend IP address."
+                          }
+                        ],
                         "name": "2022-05-01",
                         "resources": [
                           {
@@ -10828,6 +10836,14 @@
                     ],
                     "versions": [
                       {
+                        "examples": [
+                          {
+                            "commands": [
+                              "network lb frontend-ip list -g MyResourceGroup --lb-name MyLb"
+                            ],
+                            "name": "List frontend IP addresses."
+                          }
+                        ],
                         "name": "2022-05-01",
                         "resources": [
                           {
@@ -10852,6 +10868,14 @@
                     ],
                     "versions": [
                       {
+                        "examples": [
+                          {
+                            "commands": [
+                              "network lb frontend-ip show -g MyResourceGroup --lb-name MyLb -n MyFrontendIp"
+                            ],
+                            "name": "Get the details of a frontend IP address."
+                          }
+                        ],
                         "name": "2022-05-01",
                         "resources": [
                           {
@@ -10876,6 +10900,20 @@
                     ],
                     "versions": [
                       {
+                        "examples": [
+                          {
+                            "commands": [
+                              "network lb frontend-ip update -g MyResourceGroup --lb-name MyLb -n MyFrontendIp --public-ip-address MyNewPublicIp"
+                            ],
+                            "name": "Update the frontend IP address of a public load balancer."
+                          },
+                          {
+                            "commands": [
+                              "network lb frontend-ip update -g MyResourceGroup --lb-name MyLb -n MyFrontendIp --private-ip-address 10.10.10.50"
+                            ],
+                            "name": "Update the frontend IP address of an internal load balancer."
+                          }
+                        ],
                         "name": "2022-05-01",
                         "resources": [
                           {
