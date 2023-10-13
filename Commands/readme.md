@@ -161,6 +161,9 @@
 - [restore-point](/Commands/restore-point/readme.md)
 : Manage restore point with res.
 
+- [search](/Commands/search/readme.md)
+: Demo
+
 - [self-help](/Commands/self-help/readme.md)
 : Azure SelfHelp will help you troubleshoot issues with Azure resources.
 
