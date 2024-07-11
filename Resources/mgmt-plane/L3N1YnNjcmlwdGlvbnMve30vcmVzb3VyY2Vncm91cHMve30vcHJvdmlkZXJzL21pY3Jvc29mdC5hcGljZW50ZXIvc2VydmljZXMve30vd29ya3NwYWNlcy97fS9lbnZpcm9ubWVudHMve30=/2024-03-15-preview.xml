@@ -7,18 +7,18 @@
       <argGroup name="">
         <arg type="string" var="$Path.environmentName" options="environment-name environment name" required="True" group="" idPart="child_name_2">
           <help short="The name of the environment."/>
-          <format maxLength="90" minLength="1"/>
+          <format pattern="^[a-zA-Z0-9-]{3,90}$" maxLength="90" minLength="1"/>
         </arg>
         <arg type="ResourceGroupName" var="$Path.resourceGroupName" options="resource-group g" required="True" idPart="resource_group"/>
         <arg type="string" var="$Path.serviceName" options="service-name service s" required="True" group="" idPart="name">
           <help short="The name of the API Center service."/>
-          <format maxLength="90" minLength="1"/>
+          <format pattern="^[a-zA-Z0-9-]{3,90}$" maxLength="90" minLength="1"/>
         </arg>
         <arg type="SubscriptionId" var="$Path.subscriptionId" options="subscription" required="True" idPart="subscription"/>
         <arg type="string" var="$Path.workspaceName" options="workspace-name workspace w" required="True" group="" idPart="child_name_1">
           <help short="The name of the workspace."/>
           <default value="&quot;default&quot;"/>
-          <format maxLength="90" minLength="1"/>
+          <format pattern="^[a-zA-Z0-9-]{3,90}$" maxLength="90" minLength="1"/>
         </arg>
       </argGroup>
       <operation operationId="Environments_Get">
@@ -26,17 +26,17 @@
           <request method="get">
             <path>
               <param type="string" name="environmentName" arg="$Path.environmentName" required="True">
-                <format maxLength="90" minLength="1"/>
+                <format pattern="^[a-zA-Z0-9-]{3,90}$" maxLength="90" minLength="1"/>
               </param>
               <param type="string" name="resourceGroupName" arg="$Path.resourceGroupName" required="True">
                 <format maxLength="90" minLength="1"/>
               </param>
               <param type="string" name="serviceName" arg="$Path.serviceName" required="True">
-                <format maxLength="90" minLength="1"/>
+                <format pattern="^[a-zA-Z0-9-]{3,90}$" maxLength="90" minLength="1"/>
               </param>
               <param type="uuid" name="subscriptionId" arg="$Path.subscriptionId" required="True"/>
               <param type="string" name="workspaceName" arg="$Path.workspaceName" required="True">
-                <format maxLength="90" minLength="1"/>
+                <format pattern="^[a-zA-Z0-9-]{3,90}$" maxLength="90" minLength="1"/>
               </param>
             </path>
             <query>
@@ -70,12 +70,14 @@
                     </prop>
                     <prop type="object" name="onboarding">
                       <prop type="array<string>" name="developerPortalUri">
+                        <format maxLength="1"/>
                         <item type="string"/>
                       </prop>
                       <prop type="string" name="instructions"/>
                     </prop>
                     <prop type="object" name="server">
                       <prop type="array<string>" name="managementPortalUri">
+                        <format maxLength="1"/>
                         <item type="string"/>
                       </prop>
                       <prop type="string" name="type">
@@ -137,18 +139,18 @@
       <argGroup name="">
         <arg type="string" var="$Path.environmentName" options="environment-name environment name" required="True" group="" idPart="child_name_2">
           <help short="The name of the environment."/>
-          <format maxLength="90" minLength="1"/>
+          <format pattern="^[a-zA-Z0-9-]{3,90}$" maxLength="90" minLength="1"/>
         </arg>
         <arg type="ResourceGroupName" var="$Path.resourceGroupName" options="resource-group g" required="True" idPart="resource_group"/>
         <arg type="string" var="$Path.serviceName" options="service-name service s" required="True" group="" idPart="name">
           <help short="The name of the API Center service."/>
-          <format maxLength="90" minLength="1"/>
+          <format pattern="^[a-zA-Z0-9-]{3,90}$" maxLength="90" minLength="1"/>
         </arg>
         <arg type="SubscriptionId" var="$Path.subscriptionId" options="subscription" required="True" idPart="subscription"/>
         <arg type="string" var="$Path.workspaceName" options="workspace-name workspace w" required="True" group="" idPart="child_name_1">
           <help short="The name of the workspace."/>
           <default value="&quot;default&quot;"/>
-          <format maxLength="90" minLength="1"/>
+          <format pattern="^[a-zA-Z0-9-]{3,90}$" maxLength="90" minLength="1"/>
         </arg>
       </argGroup>
       <operation operationId="Environments_Delete">
@@ -156,17 +158,17 @@
           <request method="delete">
             <path>
               <param type="string" name="environmentName" arg="$Path.environmentName" required="True">
-                <format maxLength="90" minLength="1"/>
+                <format pattern="^[a-zA-Z0-9-]{3,90}$" maxLength="90" minLength="1"/>
               </param>
               <param type="string" name="resourceGroupName" arg="$Path.resourceGroupName" required="True">
                 <format maxLength="90" minLength="1"/>
               </param>
               <param type="string" name="serviceName" arg="$Path.serviceName" required="True">
-                <format maxLength="90" minLength="1"/>
+                <format pattern="^[a-zA-Z0-9-]{3,90}$" maxLength="90" minLength="1"/>
               </param>
               <param type="uuid" name="subscriptionId" arg="$Path.subscriptionId" required="True"/>
               <param type="string" name="workspaceName" arg="$Path.workspaceName" required="True">
-                <format maxLength="90" minLength="1"/>
+                <format pattern="^[a-zA-Z0-9-]{3,90}$" maxLength="90" minLength="1"/>
               </param>
             </path>
             <query>
@@ -193,24 +195,24 @@
       <argGroup name="">
         <arg type="string" var="$Path.environmentName" options="environment-name environment name" required="True" group="" idPart="child_name_2">
           <help short="The name of the environment."/>
-          <format maxLength="90" minLength="1"/>
+          <format pattern="^[a-zA-Z0-9-]{3,90}$" maxLength="90" minLength="1"/>
         </arg>
         <arg type="ResourceGroupName" var="$Path.resourceGroupName" options="resource-group g" required="True" idPart="resource_group"/>
         <arg type="string" var="$Path.serviceName" options="service-name service s" required="True" group="" idPart="name">
           <help short="The name of the API Center service."/>
-          <format maxLength="90" minLength="1"/>
+          <format pattern="^[a-zA-Z0-9-]{3,90}$" maxLength="90" minLength="1"/>
         </arg>
         <arg type="SubscriptionId" var="$Path.subscriptionId" options="subscription" required="True" idPart="subscription"/>
         <arg type="string" var="$Path.workspaceName" options="workspace-name workspace w" required="True" group="" idPart="child_name_1">
           <help short="The name of the workspace."/>
           <default value="&quot;default&quot;"/>
-          <format maxLength="90" minLength="1"/>
+          <format pattern="^[a-zA-Z0-9-]{3,90}$" maxLength="90" minLength="1"/>
         </arg>
       </argGroup>
       <argGroup name="Properties">
         <arg type="object" var="$payload.properties.customProperties" options="custom-properties" group="Properties">
           <blank value="{}"/>
-          <help short="The custom metadata defined for API catalog entities."/>
+          <help short="The custom metadata defined for API catalog entities"/>
         </arg>
         <arg type="string" var="$payload.properties.description" options="description" group="Properties">
           <help short="Description."/>
@@ -225,7 +227,10 @@
           </enum>
         </arg>
         <arg type="object" var="$payload.properties.onboarding" options="onboarding" group="Properties">
+          <help short="Environment onboarding information"/>
           <arg type="array<string>" var="$payload.properties.onboarding.developerPortalUri" options="developer-portal-uri">
+            <help short="The location of the development portal"/>
+            <format maxLength="1"/>
             <item type="string"/>
           </arg>
           <arg type="string" var="$payload.properties.onboarding.instructions" options="instructions">
@@ -235,6 +240,8 @@
         <arg type="object" var="$payload.properties.server" options="server" group="Properties">
           <help short="Server information of the environment."/>
           <arg type="array<string>" var="$payload.properties.server.managementPortalUri" options="management-portal-uri">
+            <help short="The location of the management portal"/>
+            <format maxLength="1"/>
             <item type="string"/>
           </arg>
           <arg type="string" var="$payload.properties.server.type" options="type">
@@ -260,17 +267,17 @@
           <request method="put">
             <path>
               <param type="string" name="environmentName" arg="$Path.environmentName" required="True">
-                <format maxLength="90" minLength="1"/>
+                <format pattern="^[a-zA-Z0-9-]{3,90}$" maxLength="90" minLength="1"/>
               </param>
               <param type="string" name="resourceGroupName" arg="$Path.resourceGroupName" required="True">
                 <format maxLength="90" minLength="1"/>
               </param>
               <param type="string" name="serviceName" arg="$Path.serviceName" required="True">
-                <format maxLength="90" minLength="1"/>
+                <format pattern="^[a-zA-Z0-9-]{3,90}$" maxLength="90" minLength="1"/>
               </param>
               <param type="uuid" name="subscriptionId" arg="$Path.subscriptionId" required="True"/>
               <param type="string" name="workspaceName" arg="$Path.workspaceName" required="True">
-                <format maxLength="90" minLength="1"/>
+                <format pattern="^[a-zA-Z0-9-]{3,90}$" maxLength="90" minLength="1"/>
               </param>
             </path>
             <query>
@@ -295,12 +302,14 @@
                     </prop>
                     <prop type="object" name="onboarding" arg="$payload.properties.onboarding">
                       <prop type="array<string>" name="developerPortalUri" arg="$payload.properties.onboarding.developerPortalUri">
+                        <format maxLength="1"/>
                         <item type="string"/>
                       </prop>
                       <prop type="string" name="instructions" arg="$payload.properties.onboarding.instructions"/>
                     </prop>
                     <prop type="object" name="server" arg="$payload.properties.server">
                       <prop type="array<string>" name="managementPortalUri" arg="$payload.properties.server.managementPortalUri">
+                        <format maxLength="1"/>
                         <item type="string"/>
                       </prop>
                       <prop type="string" name="type" arg="$payload.properties.server.type">
@@ -347,12 +356,14 @@
                     </prop>
                     <prop type="object" name="onboarding">
                       <prop type="array<string>" name="developerPortalUri">
+                        <format maxLength="1"/>
                         <item type="string"/>
                       </prop>
                       <prop type="string" name="instructions"/>
                     </prop>
                     <prop type="object" name="server">
                       <prop type="array<string>" name="managementPortalUri">
+                        <format maxLength="1"/>
                         <item type="string"/>
                       </prop>
                       <prop type="string" name="type">
@@ -414,18 +425,18 @@
       <argGroup name="">
         <arg type="string" var="$Path.environmentName" options="environment-name environment name" required="True" group="" idPart="child_name_2">
           <help short="The name of the environment."/>
-          <format maxLength="90" minLength="1"/>
+          <format pattern="^[a-zA-Z0-9-]{3,90}$" maxLength="90" minLength="1"/>
         </arg>
         <arg type="ResourceGroupName" var="$Path.resourceGroupName" options="resource-group g" required="True" idPart="resource_group"/>
         <arg type="string" var="$Path.serviceName" options="service-name service s" required="True" group="" idPart="name">
           <help short="The name of the API Center service."/>
-          <format maxLength="90" minLength="1"/>
+          <format pattern="^[a-zA-Z0-9-]{3,90}$" maxLength="90" minLength="1"/>
         </arg>
         <arg type="SubscriptionId" var="$Path.subscriptionId" options="subscription" required="True" idPart="subscription"/>
         <arg type="string" var="$Path.workspaceName" options="workspace-name workspace w" required="True" group="" idPart="child_name_1">
           <help short="The name of the workspace."/>
           <default value="&quot;default&quot;"/>
-          <format maxLength="90" minLength="1"/>
+          <format pattern="^[a-zA-Z0-9-]{3,90}$" maxLength="90" minLength="1"/>
         </arg>
       </argGroup>
       <operation operationId="Environments_Head">
@@ -433,17 +444,17 @@
           <request method="head">
             <path>
               <param type="string" name="environmentName" arg="$Path.environmentName" required="True">
-                <format maxLength="90" minLength="1"/>
+                <format pattern="^[a-zA-Z0-9-]{3,90}$" maxLength="90" minLength="1"/>
               </param>
               <param type="string" name="resourceGroupName" arg="$Path.resourceGroupName" required="True">
                 <format maxLength="90" minLength="1"/>
               </param>
               <param type="string" name="serviceName" arg="$Path.serviceName" required="True">
-                <format maxLength="90" minLength="1"/>
+                <format pattern="^[a-zA-Z0-9-]{3,90}$" maxLength="90" minLength="1"/>
               </param>
               <param type="uuid" name="subscriptionId" arg="$Path.subscriptionId" required="True"/>
               <param type="string" name="workspaceName" arg="$Path.workspaceName" required="True">
-                <format maxLength="90" minLength="1"/>
+                <format pattern="^[a-zA-Z0-9-]{3,90}$" maxLength="90" minLength="1"/>
               </param>
             </path>
             <query>
@@ -469,17 +480,17 @@
       <argGroup name="">
         <arg type="string" var="$Path.environmentName" options="environment-name environment name" required="True" group="" idPart="child_name_2">
           <help short="The name of the environment."/>
-          <format maxLength="90" minLength="1"/>
+          <format pattern="^[a-zA-Z0-9-]{3,90}$" maxLength="90" minLength="1"/>
         </arg>
         <arg type="ResourceGroupName" var="$Path.resourceGroupName" options="resource-group g" required="True" idPart="resource_group"/>
         <arg type="string" var="$Path.serviceName" options="service-name service s" required="True" group="" idPart="name">
           <help short="The name of the API Center service."/>
-          <format maxLength="90" minLength="1"/>
+          <format pattern="^[a-zA-Z0-9-]{3,90}$" maxLength="90" minLength="1"/>
         </arg>
         <arg type="SubscriptionId" var="$Path.subscriptionId" options="subscription" required="True" idPart="subscription"/>
         <arg type="string" var="$Path.workspaceName" options="workspace-name workspace w" required="True" group="" idPart="child_name_1">
           <help short="The name of the workspace."/>
-          <format maxLength="90" minLength="1"/>
+          <format pattern="^[a-zA-Z0-9-]{3,90}$" maxLength="90" minLength="1"/>
         </arg>
       </argGroup>
       <argGroup name="Properties">
@@ -488,7 +499,7 @@
           <help short="The custom metadata defined for API catalog entities."/>
         </arg>
         <arg nullable="True" type="string" var="$payload.properties.description" options="description" group="Properties">
-          <help short="Description."/>
+          <help short="The environment description."/>
         </arg>
         <arg type="string" var="$payload.properties.kind" options="kind" group="Properties">
           <help short="Environment kind."/>
@@ -500,7 +511,10 @@
           </enum>
         </arg>
         <arg nullable="True" type="object" var="$payload.properties.onboarding" options="onboarding" group="Properties">
+          <help short="Environment onboarding information"/>
           <arg nullable="True" type="array<string>" var="$payload.properties.onboarding.developerPortalUri" options="developer-portal-uri">
+            <help short="The location of the development portal"/>
+            <format maxLength="1"/>
             <item nullable="True" type="string"/>
           </arg>
           <arg nullable="True" type="string" var="$payload.properties.onboarding.instructions" options="instructions">
@@ -510,6 +524,8 @@
         <arg nullable="True" type="object" var="$payload.properties.server" options="server" group="Properties">
           <help short="Server information of the environment."/>
           <arg nullable="True" type="array<string>" var="$payload.properties.server.managementPortalUri" options="management-portal-uri">
+            <help short="The location of the management portal"/>
+            <format maxLength="1"/>
             <item nullable="True" type="string"/>
           </arg>
           <arg nullable="True" type="string" var="$payload.properties.server.type" options="type">
@@ -535,17 +551,17 @@
           <request method="get">
             <path>
               <param type="string" name="environmentName" arg="$Path.environmentName" required="True">
-                <format maxLength="90" minLength="1"/>
+                <format pattern="^[a-zA-Z0-9-]{3,90}$" maxLength="90" minLength="1"/>
               </param>
               <param type="string" name="resourceGroupName" arg="$Path.resourceGroupName" required="True">
                 <format maxLength="90" minLength="1"/>
               </param>
               <param type="string" name="serviceName" arg="$Path.serviceName" required="True">
-                <format maxLength="90" minLength="1"/>
+                <format pattern="^[a-zA-Z0-9-]{3,90}$" maxLength="90" minLength="1"/>
               </param>
               <param type="uuid" name="subscriptionId" arg="$Path.subscriptionId" required="True"/>
               <param type="string" name="workspaceName" arg="$Path.workspaceName" required="True">
-                <format maxLength="90" minLength="1"/>
+                <format pattern="^[a-zA-Z0-9-]{3,90}$" maxLength="90" minLength="1"/>
               </param>
             </path>
             <query>
@@ -579,12 +595,14 @@
                     </prop>
                     <prop type="object" name="onboarding">
                       <prop type="array<string>" name="developerPortalUri">
+                        <format maxLength="1"/>
                         <item type="string"/>
                       </prop>
                       <prop type="string" name="instructions"/>
                     </prop>
                     <prop type="object" name="server">
                       <prop type="array<string>" name="managementPortalUri">
+                        <format maxLength="1"/>
                         <item type="string"/>
                       </prop>
                       <prop type="string" name="type">
@@ -656,12 +674,14 @@
                 </prop>
                 <prop type="object" name="onboarding" arg="$payload.properties.onboarding">
                   <prop type="array<string>" name="developerPortalUri" arg="$payload.properties.onboarding.developerPortalUri">
+                    <format maxLength="1"/>
                     <item type="string"/>
                   </prop>
                   <prop type="string" name="instructions" arg="$payload.properties.onboarding.instructions"/>
                 </prop>
                 <prop type="object" name="server" arg="$payload.properties.server">
                   <prop type="array<string>" name="managementPortalUri" arg="$payload.properties.server.managementPortalUri">
+                    <format maxLength="1"/>
                     <item type="string"/>
                   </prop>
                   <prop type="string" name="type" arg="$payload.properties.server.type">
@@ -689,17 +709,17 @@
           <request method="put">
             <path>
               <param type="string" name="environmentName" arg="$Path.environmentName" required="True">
-                <format maxLength="90" minLength="1"/>
+                <format pattern="^[a-zA-Z0-9-]{3,90}$" maxLength="90" minLength="1"/>
               </param>
               <param type="string" name="resourceGroupName" arg="$Path.resourceGroupName" required="True">
                 <format maxLength="90" minLength="1"/>
               </param>
               <param type="string" name="serviceName" arg="$Path.serviceName" required="True">
-                <format maxLength="90" minLength="1"/>
+                <format pattern="^[a-zA-Z0-9-]{3,90}$" maxLength="90" minLength="1"/>
               </param>
               <param type="uuid" name="subscriptionId" arg="$Path.subscriptionId" required="True"/>
               <param type="string" name="workspaceName" arg="$Path.workspaceName" required="True">
-                <format maxLength="90" minLength="1"/>
+                <format pattern="^[a-zA-Z0-9-]{3,90}$" maxLength="90" minLength="1"/>
               </param>
             </path>
             <query>

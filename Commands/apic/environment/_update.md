@@ -1,6 +1,6 @@
 # [Command] _apic environment update_
 
-Update existing environment.
+Update new or updates existing environment.
 
 ## Versions
 

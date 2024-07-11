@@ -8,7 +8,7 @@ Manage Azure API Center services
 : Commands to manage APIs in API Center
 
 - [environment](/Commands/apic/environment/readme.md)
-: Commands to manage environments in API Center
+: Commands to manage Environments in API Center
 
 - [metadata](/Commands/apic/metadata/readme.md)
 : Commands to manage metadata schemas in API Center
