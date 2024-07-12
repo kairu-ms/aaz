@@ -248,7 +248,7 @@
           <help short="Report collection trigger time's time zone, the available list can be obtained by executing &quot;Get-TimeZone -ListAvailable&quot; in PowerShell. An example of valid timezone id is &quot;Pacific Standard Time&quot;."/>
           <default value="&quot;UTC&quot;"/>
         </arg>
-        <arg type="dateTime" var="$parameters.properties.triggerTime" options="trigger-time" required="True" group="Properties">
+        <arg type="dateTime" var="$parameters.properties.triggerTime" options="trigger-time-by-codegen" required="True" group="Properties">
           <help short="Report collection trigger time."/>
         </arg>
       </argGroup>

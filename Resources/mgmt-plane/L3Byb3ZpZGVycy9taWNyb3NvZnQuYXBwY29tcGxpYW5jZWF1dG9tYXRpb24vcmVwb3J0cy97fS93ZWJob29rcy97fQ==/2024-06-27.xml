@@ -240,21 +240,21 @@
           <help short="webhook payload url"/>
           <format pattern="^(http(s)?://)[\S]{0,64994}$"/>
         </arg>
-        <arg type="string" var="$parameters.properties.sendAllEvents" options="send-all-events-hidden" hide="True" group="Properties">
+        <arg type="string" var="$parameters.properties.sendAllEvents" options="send-all-events" group="Properties">
           <help short="whether to send notification under any event."/>
           <enum>
             <item name="false" value="&quot;false&quot;"/>
             <item name="true" value="&quot;true&quot;"/>
           </enum>
         </arg>
-        <arg type="string" var="$parameters.properties.status" options="status-hidden" hide="True" group="Properties">
+        <arg type="string" var="$parameters.properties.status" options="status" group="Properties">
           <help short="Webhook status."/>
           <enum>
             <item name="Disabled" value="&quot;Disabled&quot;"/>
             <item name="Enabled" value="&quot;Enabled&quot;"/>
           </enum>
         </arg>
-        <arg type="string" var="$parameters.properties.updateWebhookKey" options="update-webhook-key-hidden" hide="True" group="Properties">
+        <arg type="string" var="$parameters.properties.updateWebhookKey" options="update-webhook-key" group="Properties">
           <help short="whether to update webhookKey."/>
           <enum>
             <item name="false" value="&quot;false&quot;"/>
@@ -501,21 +501,21 @@
           <help short="webhook payload url"/>
           <format pattern="^(http(s)?://)[\S]{0,64994}$"/>
         </arg>
-        <arg type="string" var="$parameters.properties.sendAllEvents" options="send-all-events-hidden" hide="True" group="Properties">
+        <arg type="string" var="$parameters.properties.sendAllEvents" options="send-all-events" group="Properties">
           <help short="whether to send notification under any event."/>
           <enum>
             <item name="false" value="&quot;false&quot;"/>
             <item name="true" value="&quot;true&quot;"/>
           </enum>
         </arg>
-        <arg type="string" var="$parameters.properties.status" options="status-hidden" hide="True" group="Properties">
+        <arg type="string" var="$parameters.properties.status" options="status" group="Properties">
           <help short="Webhook status."/>
           <enum>
             <item name="Disabled" value="&quot;Disabled&quot;"/>
             <item name="Enabled" value="&quot;Enabled&quot;"/>
           </enum>
         </arg>
-        <arg type="string" var="$parameters.properties.updateWebhookKey" options="update-webhook-key" hide="True" group="Properties">
+        <arg type="string" var="$parameters.properties.updateWebhookKey" options="update-webhook-key" group="Properties">
           <help short="whether to update webhookKey."/>
           <enum>
             <item name="false" value="&quot;false&quot;"/>
