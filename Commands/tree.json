@@ -1,6 +1,368 @@
 {
   "root": {
     "commandGroups": {
+      "acat": {
+        "commandGroups": {
+          "report": {
+            "commandGroups": {
+              "snapshot": {
+                "commands": {
+                  "download": {
+                    "help": {
+                      "short": "Download compliance needs from snapshot, like: Compliance Report, Resource List."
+                    },
+                    "names": [
+                      "acat",
+                      "report",
+                      "snapshot",
+                      "download"
+                    ],
+                    "versions": [
+                      {
+                        "name": "2024-06-27",
+                        "resources": [
+                          {
+                            "id": "/providers/microsoft.appcomplianceautomation/reports/{}/snapshots/{}/download",
+                            "plane": "mgmt-plane",
+                            "version": "2024-06-27"
+                          }
+                        ]
+                      }
+                    ]
+                  },
+                  "list": {
+                    "help": {
+                      "short": "List the AppComplianceAutomation snapshot list."
+                    },
+                    "names": [
+                      "acat",
+                      "report",
+                      "snapshot",
+                      "list"
+                    ],
+                    "versions": [
+                      {
+                        "name": "2024-06-27",
+                        "resources": [
+                          {
+                            "id": "/providers/microsoft.appcomplianceautomation/reports/{}/snapshots",
+                            "plane": "mgmt-plane",
+                            "version": "2024-06-27"
+                          }
+                        ]
+                      }
+                    ]
+                  }
+                },
+                "help": {
+                  "short": "manage ACAT report snapshots"
+                },
+                "names": [
+                  "acat",
+                  "report",
+                  "snapshot"
+                ]
+              },
+              "webhook": {
+                "commands": {
+                  "create": {
+                    "help": {
+                      "short": "Create a new AppComplianceAutomation webhook or update an exiting AppComplianceAutomation webhook."
+                    },
+                    "names": [
+                      "acat",
+                      "report",
+                      "webhook",
+                      "create"
+                    ],
+                    "versions": [
+                      {
+                        "name": "2024-06-27",
+                        "resources": [
+                          {
+                            "id": "/providers/microsoft.appcomplianceautomation/reports/{}/webhooks/{}",
+                            "plane": "mgmt-plane",
+                            "version": "2024-06-27"
+                          }
+                        ]
+                      }
+                    ]
+                  },
+                  "delete": {
+                    "help": {
+                      "short": "Delete an AppComplianceAutomation webhook."
+                    },
+                    "names": [
+                      "acat",
+                      "report",
+                      "webhook",
+                      "delete"
+                    ],
+                    "versions": [
+                      {
+                        "name": "2024-06-27",
+                        "resources": [
+                          {
+                            "id": "/providers/microsoft.appcomplianceautomation/reports/{}/webhooks/{}",
+                            "plane": "mgmt-plane",
+                            "version": "2024-06-27"
+                          }
+                        ]
+                      }
+                    ]
+                  },
+                  "list": {
+                    "help": {
+                      "short": "List the AppComplianceAutomation webhook list."
+                    },
+                    "names": [
+                      "acat",
+                      "report",
+                      "webhook",
+                      "list"
+                    ],
+                    "versions": [
+                      {
+                        "name": "2024-06-27",
+                        "resources": [
+                          {
+                            "id": "/providers/microsoft.appcomplianceautomation/reports/{}/webhooks",
+                            "plane": "mgmt-plane",
+                            "version": "2024-06-27"
+                          }
+                        ]
+                      }
+                    ]
+                  },
+                  "show": {
+                    "help": {
+                      "short": "Get the AppComplianceAutomation webhook and its properties."
+                    },
+                    "names": [
+                      "acat",
+                      "report",
+                      "webhook",
+                      "show"
+                    ],
+                    "versions": [
+                      {
+                        "name": "2024-06-27",
+                        "resources": [
+                          {
+                            "id": "/providers/microsoft.appcomplianceautomation/reports/{}/webhooks/{}",
+                            "plane": "mgmt-plane",
+                            "version": "2024-06-27"
+                          }
+                        ]
+                      }
+                    ]
+                  },
+                  "update": {
+                    "help": {
+                      "short": "Update an exiting AppComplianceAutomation webhook."
+                    },
+                    "names": [
+                      "acat",
+                      "report",
+                      "webhook",
+                      "update"
+                    ],
+                    "versions": [
+                      {
+                        "name": "2024-06-27",
+                        "resources": [
+                          {
+                            "id": "/providers/microsoft.appcomplianceautomation/reports/{}/webhooks/{}",
+                            "plane": "mgmt-plane",
+                            "version": "2024-06-27"
+                          }
+                        ]
+                      }
+                    ]
+                  }
+                },
+                "help": {
+                  "short": "manage ACAT report webhooks"
+                },
+                "names": [
+                  "acat",
+                  "report",
+                  "webhook"
+                ]
+              }
+            },
+            "commands": {
+              "create": {
+                "help": {
+                  "short": "Create a new AppComplianceAutomation report or update an exiting AppComplianceAutomation report."
+                },
+                "names": [
+                  "acat",
+                  "report",
+                  "create"
+                ],
+                "versions": [
+                  {
+                    "name": "2024-06-27",
+                    "resources": [
+                      {
+                        "id": "/providers/microsoft.appcomplianceautomation/reports/{}",
+                        "plane": "mgmt-plane",
+                        "version": "2024-06-27"
+                      }
+                    ]
+                  }
+                ]
+              },
+              "delete": {
+                "help": {
+                  "short": "Delete an AppComplianceAutomation report."
+                },
+                "names": [
+                  "acat",
+                  "report",
+                  "delete"
+                ],
+                "versions": [
+                  {
+                    "name": "2024-06-27",
+                    "resources": [
+                      {
+                        "id": "/providers/microsoft.appcomplianceautomation/reports/{}",
+                        "plane": "mgmt-plane",
+                        "version": "2024-06-27"
+                      }
+                    ]
+                  }
+                ]
+              },
+              "list": {
+                "help": {
+                  "short": "List the AppComplianceAutomation report list for the tenant."
+                },
+                "names": [
+                  "acat",
+                  "report",
+                  "list"
+                ],
+                "versions": [
+                  {
+                    "name": "2024-06-27",
+                    "resources": [
+                      {
+                        "id": "/providers/microsoft.appcomplianceautomation/reports",
+                        "plane": "mgmt-plane",
+                        "version": "2024-06-27"
+                      }
+                    ]
+                  }
+                ]
+              },
+              "show": {
+                "help": {
+                  "short": "Get the AppComplianceAutomation report and its properties."
+                },
+                "names": [
+                  "acat",
+                  "report",
+                  "show"
+                ],
+                "versions": [
+                  {
+                    "name": "2024-06-27",
+                    "resources": [
+                      {
+                        "id": "/providers/microsoft.appcomplianceautomation/reports/{}",
+                        "plane": "mgmt-plane",
+                        "version": "2024-06-27"
+                      }
+                    ]
+                  }
+                ]
+              },
+              "update": {
+                "help": {
+                  "short": "Update an exiting AppComplianceAutomation report."
+                },
+                "names": [
+                  "acat",
+                  "report",
+                  "update"
+                ],
+                "versions": [
+                  {
+                    "name": "2024-06-27",
+                    "resources": [
+                      {
+                        "id": "/providers/microsoft.appcomplianceautomation/reports/{}",
+                        "plane": "mgmt-plane",
+                        "version": "2024-06-27"
+                      }
+                    ]
+                  }
+                ]
+              }
+            },
+            "help": {
+              "short": "manage ACAT reports"
+            },
+            "names": [
+              "acat",
+              "report"
+            ]
+          }
+        },
+        "commands": {
+          "onboard": {
+            "help": {
+              "short": "Onboard given subscriptions to Microsoft.AppComplianceAutomation provider."
+            },
+            "names": [
+              "acat",
+              "onboard"
+            ],
+            "versions": [
+              {
+                "name": "2024-06-27",
+                "resources": [
+                  {
+                    "id": "/providers/microsoft.appcomplianceautomation/onboard",
+                    "plane": "mgmt-plane",
+                    "version": "2024-06-27"
+                  }
+                ]
+              }
+            ]
+          },
+          "trigger-evaluation": {
+            "help": {
+              "short": "Trigger quick evaluation for the given subscriptions."
+            },
+            "names": [
+              "acat",
+              "trigger-evaluation"
+            ],
+            "versions": [
+              {
+                "name": "2024-06-27",
+                "resources": [
+                  {
+                    "id": "/providers/microsoft.appcomplianceautomation/triggerevaluation",
+                    "plane": "mgmt-plane",
+                    "version": "2024-06-27"
+                  }
+                ]
+              }
+            ]
+          }
+        },
+        "help": {
+          "short": "ACAT command group"
+        },
+        "names": [
+          "acat"
+        ]
+      },
       "change-analysis": {
         "commands": {
           "list": {
