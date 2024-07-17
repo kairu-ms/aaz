@@ -23,5 +23,5 @@ Update new or updates existing environment.
 
 - Update environment
     ```bash
-        apic environment update -g api-center-test -s contosoeuap --name public --title "Public cloud"
+        apic environment update -g api-center-test -n contosoeuap --environment-id public --title "Public cloud"
     ```

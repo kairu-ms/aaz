@@ -13,9 +13,6 @@ Manage Azure API Center services
 - [metadata](/Commands/apic/metadata/readme.md)
 : Commands to manage metadata schemas in API Center
 
-- [metadata-schema](/Commands/apic/metadata-schema/readme.md)
-: Commands to manage Metadata Schemas in API Center
-
 - [service](/Commands/apic/service/readme.md)
 : Manage an Azure API Center service instance.
 

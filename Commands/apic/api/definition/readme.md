@@ -16,9 +16,6 @@ Commands to manage API definitions in API Center
 - [export-specification](/Commands/apic/api/definition/_export-specification.md)
 : Exports the API specification.
 
-- [head](/Commands/apic/api/definition/_head.md)
-: Checks if specified API definition exists.
-
 - [import-specification](/Commands/apic/api/definition/_import-specification.md)
 : Imports the API specification.
 

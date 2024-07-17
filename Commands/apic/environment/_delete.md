@@ -23,5 +23,5 @@ Delete the environment.
 
 - Delete environment
     ```bash
-        apic environment delete -g api-center-test -s contosoeuap --name public
+        apic environment delete -g api-center-test -n contosoeuap --environment-id public
     ```

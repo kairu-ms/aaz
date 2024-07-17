@@ -23,5 +23,5 @@ Create new or updates existing environment.
 
 - Create environment
     ```bash
-        apic environment create -g api-center-test -s contosoeuap --name public --title "Public cloud" --kind "development"
+        apic environment create -g api-center-test -n contosoeuap --environment-id public --title "Public cloud" --type "development"
     ```

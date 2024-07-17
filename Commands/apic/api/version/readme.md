@@ -13,9 +13,6 @@ Commands to manage API versions in API Center
 - [delete](/Commands/apic/api/version/_delete.md)
 : Delete specified API version
 
-- [head](/Commands/apic/api/version/_head.md)
-: Checks if specified API version exists.
-
 - [list](/Commands/apic/api/version/_list.md)
 : List a collection of API versions.
 

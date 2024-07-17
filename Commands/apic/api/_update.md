@@ -28,5 +28,10 @@ Update existing API.
 
 - Update API
     ```bash
-        apic api update -g contoso-resources -s contoso --name echo-api --summary "Basic REST API service"
+        apic api update -g contoso-resources -n contoso --api-id echo-api --summary "Basic REST API service"
+    ```
+
+- Update custom properties
+    ```bash
+        apic api update -g contoso-resources -n contoso --api-id echo-api --custom-properties '{\"public-facing\":true}'
     ```

@@ -23,5 +23,5 @@ List a collection of API deployments.
 
 - List API deployments
     ```bash
-        apic api deployment list -g api-center-test -s contoso --api-name echo-api
+        apic api deployment list -g api-center-test -n contoso --api-id echo-api
     ```

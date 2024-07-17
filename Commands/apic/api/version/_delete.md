@@ -23,5 +23,5 @@ Delete specified API version
 
 - Delete API version
     ```bash
-        apic api version delete -g api-center-test -s contosoeuap --api-name echo-api --name 2023-01-01
+        apic api version delete -g api-center-test -n contosoeuap --api-id echo-api --version-id 2023-01-01
     ```

@@ -23,5 +23,5 @@ List a collection of environments.
 
 - List environments
     ```bash
-        apic environment list -g api-center-test -s contosoeuap
+        apic environment list -g api-center-test -n contosoeuap
     ```

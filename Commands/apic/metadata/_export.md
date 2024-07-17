@@ -24,3 +24,24 @@ Exports the metadata schema.
     ```bash
         apic metadata export -g api-center-test -n contosoeuap --assignments environment --file-name filename.json
     ```
+
+### [2024-03-15-preview](/Resources/mgmt-plane/L3N1YnNjcmlwdGlvbnMve30vcmVzb3VyY2Vncm91cHMve30vcHJvdmlkZXJzL21pY3Jvc29mdC5hcGljZW50ZXIvc2VydmljZXMve30vZXhwb3J0bWV0YWRhdGFzY2hlbWE=/2024-03-15-preview.xml) **Stable**
+
+<!-- mgmt-plane /subscriptions/{}/resourcegroups/{}/providers/microsoft.apicenter/services/{}/exportmetadataschema 2024-03-15-preview -->
+
+#### examples
+
+- Export Metadata Schema assigned to api
+    ```bash
+        apic metadata export -g api-center-test -n contosoeuap --assignments api --file-name filename.json
+    ```
+
+- Export Metadata Schema assigned to deployment
+    ```bash
+        apic metadata export -g api-center-test -n contosoeuap --assignments deployment --file-name filename.json
+    ```
+
+- Export Metadata Schema assigned to environment
+    ```bash
+        apic metadata export -g api-center-test -n contosoeuap --assignments environment --file-name filename.json
+    ```

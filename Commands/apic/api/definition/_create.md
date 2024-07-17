@@ -23,5 +23,5 @@ Create a new API definition or update an existing API definition.
 
 - Create API definition
     ```bash
-        apic api definition create -g api-center-test -s contosoeuap --api-name echo-api --version 2023-01-01 --name "openapi" --title "OpenAPI"
+        apic api definition create -g api-center-test -n contosoeuap --api-id echo-api --version-id 2023-01-01 --definition-id "openapi" --title "OpenAPI"
     ```

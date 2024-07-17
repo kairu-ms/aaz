@@ -23,5 +23,5 @@ List a collection of API definitions.
 
 - List API definitions
     ```bash
-        apic api definition list -g api-center-test -s contosoeuap --api-name echo-api --version 2023-01-01
+        apic api definition list -g api-center-test -n contosoeuap --api-id echo-api --version-id 2023-01-01
     ```

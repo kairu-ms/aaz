@@ -23,5 +23,5 @@ List a collection of API versions.
 
 - List API versions
     ```bash
-        apic api version list -g api-center-test -s contosoeuap --api-name echo-api
+        apic api version list -g api-center-test -n contosoeuap --api-id echo-api
     ```

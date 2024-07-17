@@ -23,5 +23,5 @@ Create a new API version or update an existing API version.
 
 - Create API version
     ```bash
-        apic api version create -g api-center-test -s contosoeuap --api-name echo-api --name 2023-01-01 --title "2023-01-01"
+        apic api version create -g api-center-test -n contosoeuap --api-id echo-api --version-id 2023-01-01 --title "2023-01-01" --lifecycle-stage production
     ```

@@ -23,5 +23,5 @@ Delete specified API.
 
 - Delete API
     ```bash
-        apic api delete -g contoso-resources -s contoso --name echo-api
+        apic api delete -g contoso-resources -n contoso --api-id echo-api
     ```

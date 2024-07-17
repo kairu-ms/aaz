@@ -23,5 +23,5 @@ Update existing API deployment.
 
 - Update API deployment
     ```bash
-        apic api deployment update -g api-center-test -s contoso --name production --title "Production deployment" --api echo-api
+        apic api deployment update -g api-center-test -n contoso --deployment-id production --title "Production deployment" --api-id echo-api
     ```

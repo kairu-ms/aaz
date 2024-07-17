@@ -23,5 +23,5 @@ Get details of the environment.
 
 - Show environment details
     ```bash
-        apic environment show -g api-center-test -s contosoeuap --name public
+        apic environment show -g api-center-test -n contosoeuap --environment-id public
     ```

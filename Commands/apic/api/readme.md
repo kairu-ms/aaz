@@ -24,9 +24,6 @@ Commands to manage APIs in API Center
 - [delete](/Commands/apic/api/_delete.md)
 : Delete specified API.
 
-- [head](/Commands/apic/api/_head.md)
-: Checks if specified API exists.
-
 - [list](/Commands/apic/api/_list.md)
 : List a collection of APIs.
 

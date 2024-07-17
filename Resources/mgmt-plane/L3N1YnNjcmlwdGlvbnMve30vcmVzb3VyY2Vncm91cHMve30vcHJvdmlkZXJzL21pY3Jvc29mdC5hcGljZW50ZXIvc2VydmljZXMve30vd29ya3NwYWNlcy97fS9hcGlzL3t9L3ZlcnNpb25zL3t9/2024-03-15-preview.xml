@@ -5,18 +5,18 @@
     <command name="show" version="2024-03-15-preview">
       <resource id="/subscriptions/{}/resourcegroups/{}/providers/microsoft.apicenter/services/{}/workspaces/{}/apis/{}/versions/{}" version="2024-03-15-preview" swagger="mgmt-plane/apicenter/ResourceProviders/Microsoft.ApiCenter/Paths/L3N1YnNjcmlwdGlvbnMve3N1YnNjcmlwdGlvbklkfS9yZXNvdXJjZUdyb3Vwcy97cmVzb3VyY2VHcm91cE5hbWV9L3Byb3ZpZGVycy9NaWNyb3NvZnQuQXBpQ2VudGVyL3NlcnZpY2VzL3tzZXJ2aWNlTmFtZX0vd29ya3NwYWNlcy97d29ya3NwYWNlTmFtZX0vYXBpcy97YXBpTmFtZX0vdmVyc2lvbnMve3ZlcnNpb25OYW1lfQ==/V/MjAyNC0wMy0xNS1wcmV2aWV3"/>
       <argGroup name="">
-        <arg type="string" var="$Path.apiName" options="api-name api" required="True" group="" idPart="child_name_2">
-          <help short="The name of the API."/>
+        <arg type="string" var="$Path.apiName" options="api-id" required="True" group="" idPart="child_name_2">
+          <help short="The id of the API."/>
           <format pattern="^[a-zA-Z0-9-]{3,90}$" maxLength="90" minLength="1"/>
         </arg>
         <arg type="ResourceGroupName" var="$Path.resourceGroupName" options="resource-group g" required="True" idPart="resource_group"/>
-        <arg type="string" var="$Path.serviceName" options="service-name service s" required="True" group="" idPart="name">
-          <help short="The name of the API Center service."/>
+        <arg type="string" var="$Path.serviceName" options="service-name n" required="True" group="" idPart="name">
+          <help short="The name of Azure API Center service."/>
           <format pattern="^[a-zA-Z0-9-]{3,90}$" maxLength="90" minLength="1"/>
         </arg>
         <arg type="SubscriptionId" var="$Path.subscriptionId" options="subscription" required="True" idPart="subscription"/>
-        <arg type="string" var="$Path.versionName" options="version-name version name" required="True" group="" idPart="child_name_3">
-          <help short="The name of the API version."/>
+        <arg type="string" var="$Path.versionName" options="version-id" required="True" group="" idPart="child_name_3">
+          <help short="The id of the API version."/>
           <format pattern="^[a-zA-Z0-9-]{3,90}$" maxLength="90" minLength="1"/>
         </arg>
         <arg type="string" var="$Path.workspaceName" options="workspace-name workspace w" required="True" group="" idPart="child_name_1">
@@ -33,7 +33,7 @@
                 <format pattern="^[a-zA-Z0-9-]{3,90}$" maxLength="90" minLength="1"/>
               </param>
               <param type="string" name="resourceGroupName" arg="$Path.resourceGroupName" required="True">
-                <format maxLength="90" minLength="1"/>
+                <format pattern="^[-\w\._\(\)]+$" maxLength="90" minLength="1"/>
               </param>
               <param type="string" name="serviceName" arg="$Path.serviceName" required="True">
                 <format pattern="^[a-zA-Z0-9-]{3,90}$" maxLength="90" minLength="1"/>
@@ -60,9 +60,7 @@
             <body>
               <json var="$Instance">
                 <schema type="object">
-                  <prop readOnly="True" type="ResourceId" name="id">
-                    <format template="/subscriptions/{}/resourceGroups/{}/providers/Microsoft.ApiCenter/services/{}/workspaces/{}/apis/{}/versions/{}"/>
-                  </prop>
+                  <prop readOnly="True" type="ResourceId" name="id"/>
                   <prop readOnly="True" type="string" name="name"/>
                   <prop type="object" name="properties" clientFlatten="True">
                     <prop type="string" name="lifecycleStage" required="True">
@@ -121,18 +119,18 @@
     <command name="delete" version="2024-03-15-preview" confirmation="Are you sure you want to perform this operation?">
       <resource id="/subscriptions/{}/resourcegroups/{}/providers/microsoft.apicenter/services/{}/workspaces/{}/apis/{}/versions/{}" version="2024-03-15-preview" swagger="mgmt-plane/apicenter/ResourceProviders/Microsoft.ApiCenter/Paths/L3N1YnNjcmlwdGlvbnMve3N1YnNjcmlwdGlvbklkfS9yZXNvdXJjZUdyb3Vwcy97cmVzb3VyY2VHcm91cE5hbWV9L3Byb3ZpZGVycy9NaWNyb3NvZnQuQXBpQ2VudGVyL3NlcnZpY2VzL3tzZXJ2aWNlTmFtZX0vd29ya3NwYWNlcy97d29ya3NwYWNlTmFtZX0vYXBpcy97YXBpTmFtZX0vdmVyc2lvbnMve3ZlcnNpb25OYW1lfQ==/V/MjAyNC0wMy0xNS1wcmV2aWV3"/>
       <argGroup name="">
-        <arg type="string" var="$Path.apiName" options="api-name api" required="True" group="" idPart="child_name_2">
-          <help short="The name of the API."/>
+        <arg type="string" var="$Path.apiName" options="api-id" required="True" group="" idPart="child_name_2">
+          <help short="The id of the API."/>
           <format pattern="^[a-zA-Z0-9-]{3,90}$" maxLength="90" minLength="1"/>
         </arg>
         <arg type="ResourceGroupName" var="$Path.resourceGroupName" options="resource-group g" required="True" idPart="resource_group"/>
-        <arg type="string" var="$Path.serviceName" options="service-name service s" required="True" group="" idPart="name">
-          <help short="The name of the API Center service."/>
+        <arg type="string" var="$Path.serviceName" options="service-name n" required="True" group="" idPart="name">
+          <help short="The name of Azure API Center service."/>
           <format pattern="^[a-zA-Z0-9-]{3,90}$" maxLength="90" minLength="1"/>
         </arg>
         <arg type="SubscriptionId" var="$Path.subscriptionId" options="subscription" required="True" idPart="subscription"/>
-        <arg type="string" var="$Path.versionName" options="version-name version name" required="True" group="" idPart="child_name_3">
-          <help short="The name of the API version."/>
+        <arg type="string" var="$Path.versionName" options="version-id" required="True" group="" idPart="child_name_3">
+          <help short="The id of the API version."/>
           <format pattern="^[a-zA-Z0-9-]{3,90}$" maxLength="90" minLength="1"/>
         </arg>
         <arg type="string" var="$Path.workspaceName" options="workspace-name workspace w" required="True" group="" idPart="child_name_1">
@@ -149,7 +147,7 @@
                 <format pattern="^[a-zA-Z0-9-]{3,90}$" maxLength="90" minLength="1"/>
               </param>
               <param type="string" name="resourceGroupName" arg="$Path.resourceGroupName" required="True">
-                <format maxLength="90" minLength="1"/>
+                <format pattern="^[-\w\._\(\)]+$" maxLength="90" minLength="1"/>
               </param>
               <param type="string" name="serviceName" arg="$Path.serviceName" required="True">
                 <format pattern="^[a-zA-Z0-9-]{3,90}$" maxLength="90" minLength="1"/>
@@ -184,18 +182,18 @@
     <command name="create" version="2024-03-15-preview" confirmation="">
       <resource id="/subscriptions/{}/resourcegroups/{}/providers/microsoft.apicenter/services/{}/workspaces/{}/apis/{}/versions/{}" version="2024-03-15-preview" swagger="mgmt-plane/apicenter/ResourceProviders/Microsoft.ApiCenter/Paths/L3N1YnNjcmlwdGlvbnMve3N1YnNjcmlwdGlvbklkfS9yZXNvdXJjZUdyb3Vwcy97cmVzb3VyY2VHcm91cE5hbWV9L3Byb3ZpZGVycy9NaWNyb3NvZnQuQXBpQ2VudGVyL3NlcnZpY2VzL3tzZXJ2aWNlTmFtZX0vd29ya3NwYWNlcy97d29ya3NwYWNlTmFtZX0vYXBpcy97YXBpTmFtZX0vdmVyc2lvbnMve3ZlcnNpb25OYW1lfQ==/V/MjAyNC0wMy0xNS1wcmV2aWV3"/>
       <argGroup name="">
-        <arg type="string" var="$Path.apiName" options="api-name api" required="True" group="" idPart="child_name_2">
-          <help short="The name of the API."/>
+        <arg type="string" var="$Path.apiName" options="api-id" required="True" group="" idPart="child_name_2">
+          <help short="The id of the API."/>
           <format pattern="^[a-zA-Z0-9-]{3,90}$" maxLength="90" minLength="1"/>
         </arg>
         <arg type="ResourceGroupName" var="$Path.resourceGroupName" options="resource-group g" required="True" idPart="resource_group"/>
-        <arg type="string" var="$Path.serviceName" options="service-name service s" required="True" group="" idPart="name">
-          <help short="The name of the API Center service."/>
+        <arg type="string" var="$Path.serviceName" options="service-name n" required="True" group="" idPart="name">
+          <help short="The name of Azure API Center service."/>
           <format pattern="^[a-zA-Z0-9-]{3,90}$" maxLength="90" minLength="1"/>
         </arg>
         <arg type="SubscriptionId" var="$Path.subscriptionId" options="subscription" required="True" idPart="subscription"/>
-        <arg type="string" var="$Path.versionName" options="version-name version name" required="True" group="" idPart="child_name_3">
-          <help short="The name of the API version."/>
+        <arg type="string" var="$Path.versionName" options="version-id" required="True" group="" idPart="child_name_3">
+          <help short="The id of the API version."/>
           <format pattern="^[a-zA-Z0-9-]{3,90}$" maxLength="90" minLength="1"/>
         </arg>
         <arg type="string" var="$Path.workspaceName" options="workspace-name workspace w" required="True" group="" idPart="child_name_1">
@@ -230,7 +228,7 @@
                 <format pattern="^[a-zA-Z0-9-]{3,90}$" maxLength="90" minLength="1"/>
               </param>
               <param type="string" name="resourceGroupName" arg="$Path.resourceGroupName" required="True">
-                <format maxLength="90" minLength="1"/>
+                <format pattern="^[-\w\._\(\)]+$" maxLength="90" minLength="1"/>
               </param>
               <param type="string" name="serviceName" arg="$Path.serviceName" required="True">
                 <format pattern="^[a-zA-Z0-9-]{3,90}$" maxLength="90" minLength="1"/>
@@ -279,9 +277,7 @@
             <body>
               <json var="$Instance">
                 <schema type="object">
-                  <prop readOnly="True" type="ResourceId" name="id">
-                    <format template="/subscriptions/{}/resourceGroups/{}/providers/Microsoft.ApiCenter/services/{}/workspaces/{}/apis/{}/versions/{}"/>
-                  </prop>
+                  <prop readOnly="True" type="ResourceId" name="id"/>
                   <prop readOnly="True" type="string" name="name"/>
                   <prop type="object" name="properties" clientFlatten="True">
                     <prop type="string" name="lifecycleStage" required="True">
@@ -337,21 +333,21 @@
       </operation>
       <output type="object" ref="$Instance" clientFlatten="True"/>
     </command>
-    <command name="head" version="2024-03-15-preview">
+    <command name="check-exists" version="2024-03-15-preview" confirmation="">
       <resource id="/subscriptions/{}/resourcegroups/{}/providers/microsoft.apicenter/services/{}/workspaces/{}/apis/{}/versions/{}" version="2024-03-15-preview" swagger="mgmt-plane/apicenter/ResourceProviders/Microsoft.ApiCenter/Paths/L3N1YnNjcmlwdGlvbnMve3N1YnNjcmlwdGlvbklkfS9yZXNvdXJjZUdyb3Vwcy97cmVzb3VyY2VHcm91cE5hbWV9L3Byb3ZpZGVycy9NaWNyb3NvZnQuQXBpQ2VudGVyL3NlcnZpY2VzL3tzZXJ2aWNlTmFtZX0vd29ya3NwYWNlcy97d29ya3NwYWNlTmFtZX0vYXBpcy97YXBpTmFtZX0vdmVyc2lvbnMve3ZlcnNpb25OYW1lfQ==/V/MjAyNC0wMy0xNS1wcmV2aWV3"/>
       <argGroup name="">
-        <arg type="string" var="$Path.apiName" options="api-name api" required="True" group="" idPart="child_name_2">
-          <help short="The name of the API."/>
+        <arg type="string" var="$Path.apiName" options="api-id" required="True" group="" idPart="child_name_2">
+          <help short="The id of the API."/>
           <format pattern="^[a-zA-Z0-9-]{3,90}$" maxLength="90" minLength="1"/>
         </arg>
         <arg type="ResourceGroupName" var="$Path.resourceGroupName" options="resource-group g" required="True" idPart="resource_group"/>
-        <arg type="string" var="$Path.serviceName" options="service-name service s" required="True" group="" idPart="name">
-          <help short="The name of the API Center service."/>
+        <arg type="string" var="$Path.serviceName" options="service-name n" required="True" group="" idPart="name">
+          <help short="The name of Azure API Center service."/>
           <format pattern="^[a-zA-Z0-9-]{3,90}$" maxLength="90" minLength="1"/>
         </arg>
         <arg type="SubscriptionId" var="$Path.subscriptionId" options="subscription" required="True" idPart="subscription"/>
-        <arg type="string" var="$Path.versionName" options="version-name version" required="True" group="" idPart="child_name_3">
-          <help short="The name of the API version."/>
+        <arg type="string" var="$Path.versionName" options="version-id" required="True" group="" idPart="child_name_3">
+          <help short="The id of the API version."/>
           <format pattern="^[a-zA-Z0-9-]{3,90}$" maxLength="90" minLength="1"/>
         </arg>
         <arg type="string" var="$Path.workspaceName" options="workspace-name workspace w" required="True" group="" idPart="child_name_1">
@@ -368,7 +364,7 @@
                 <format pattern="^[a-zA-Z0-9-]{3,90}$" maxLength="90" minLength="1"/>
               </param>
               <param type="string" name="resourceGroupName" arg="$Path.resourceGroupName" required="True">
-                <format maxLength="90" minLength="1"/>
+                <format pattern="^[-\w\._\(\)]+$" maxLength="90" minLength="1"/>
               </param>
               <param type="string" name="serviceName" arg="$Path.serviceName" required="True">
                 <format pattern="^[a-zA-Z0-9-]{3,90}$" maxLength="90" minLength="1"/>
@@ -399,21 +395,21 @@
         </http>
       </operation>
     </command>
-    <command name="update" version="2024-03-15-preview">
+    <command name="update" version="2024-03-15-preview" confirmation="">
       <resource id="/subscriptions/{}/resourcegroups/{}/providers/microsoft.apicenter/services/{}/workspaces/{}/apis/{}/versions/{}" version="2024-03-15-preview" swagger="mgmt-plane/apicenter/ResourceProviders/Microsoft.ApiCenter/Paths/L3N1YnNjcmlwdGlvbnMve3N1YnNjcmlwdGlvbklkfS9yZXNvdXJjZUdyb3Vwcy97cmVzb3VyY2VHcm91cE5hbWV9L3Byb3ZpZGVycy9NaWNyb3NvZnQuQXBpQ2VudGVyL3NlcnZpY2VzL3tzZXJ2aWNlTmFtZX0vd29ya3NwYWNlcy97d29ya3NwYWNlTmFtZX0vYXBpcy97YXBpTmFtZX0vdmVyc2lvbnMve3ZlcnNpb25OYW1lfQ==/V/MjAyNC0wMy0xNS1wcmV2aWV3"/>
       <argGroup name="">
-        <arg type="string" var="$Path.apiName" options="api-name api" required="True" group="" idPart="child_name_2">
-          <help short="The name of the API."/>
+        <arg type="string" var="$Path.apiName" options="api-id" required="True" group="" idPart="child_name_2">
+          <help short="The id of the API."/>
           <format pattern="^[a-zA-Z0-9-]{3,90}$" maxLength="90" minLength="1"/>
         </arg>
         <arg type="ResourceGroupName" var="$Path.resourceGroupName" options="resource-group g" required="True" idPart="resource_group"/>
-        <arg type="string" var="$Path.serviceName" options="service-name service s" required="True" group="" idPart="name">
-          <help short="The name of the API Center service."/>
+        <arg type="string" var="$Path.serviceName" options="service-name n" required="True" group="" idPart="name">
+          <help short="The name of Azure API Center service."/>
           <format pattern="^[a-zA-Z0-9-]{3,90}$" maxLength="90" minLength="1"/>
         </arg>
         <arg type="SubscriptionId" var="$Path.subscriptionId" options="subscription" required="True" idPart="subscription"/>
-        <arg type="string" var="$Path.versionName" options="version-name version name" required="True" group="" idPart="child_name_3">
-          <help short="The name of the API version."/>
+        <arg type="string" var="$Path.versionName" options="version-id" required="True" group="" idPart="child_name_3">
+          <help short="The id of the API version."/>
           <format pattern="^[a-zA-Z0-9-]{3,90}$" maxLength="90" minLength="1"/>
         </arg>
         <arg type="string" var="$Path.workspaceName" options="workspace-name workspace w" required="True" group="" idPart="child_name_1">
@@ -447,7 +443,7 @@
                 <format pattern="^[a-zA-Z0-9-]{3,90}$" maxLength="90" minLength="1"/>
               </param>
               <param type="string" name="resourceGroupName" arg="$Path.resourceGroupName" required="True">
-                <format maxLength="90" minLength="1"/>
+                <format pattern="^[-\w\._\(\)]+$" maxLength="90" minLength="1"/>
               </param>
               <param type="string" name="serviceName" arg="$Path.serviceName" required="True">
                 <format pattern="^[a-zA-Z0-9-]{3,90}$" maxLength="90" minLength="1"/>
@@ -473,10 +469,8 @@
             </header>
             <body>
               <json var="$Instance">
-                <schema type="object" cls="ApiVersion_read">
-                  <prop readOnly="True" type="ResourceId" name="id">
-                    <format template="/subscriptions/{}/resourceGroups/{}/providers/Microsoft.ApiCenter/services/{}/workspaces/{}/apis/{}/versions/{}"/>
-                  </prop>
+                <schema type="object">
+                  <prop readOnly="True" type="ResourceId" name="id"/>
                   <prop readOnly="True" type="string" name="name"/>
                   <prop type="object" name="properties" clientFlatten="True">
                     <prop type="string" name="lifecycleStage" required="True">
@@ -562,7 +556,7 @@
                 <format pattern="^[a-zA-Z0-9-]{3,90}$" maxLength="90" minLength="1"/>
               </param>
               <param type="string" name="resourceGroupName" arg="$Path.resourceGroupName" required="True">
-                <format maxLength="90" minLength="1"/>
+                <format pattern="^[-\w\._\(\)]+$" maxLength="90" minLength="1"/>
               </param>
               <param type="string" name="serviceName" arg="$Path.serviceName" required="True">
                 <format pattern="^[a-zA-Z0-9-]{3,90}$" maxLength="90" minLength="1"/>
@@ -591,7 +585,49 @@
             </header>
             <body>
               <json var="$Instance">
-                <schema type="@ApiVersion_read"/>
+                <schema type="object">
+                  <prop readOnly="True" type="ResourceId" name="id"/>
+                  <prop readOnly="True" type="string" name="name"/>
+                  <prop type="object" name="properties" clientFlatten="True">
+                    <prop type="string" name="lifecycleStage" required="True">
+                      <enum>
+                        <item value="&quot;deprecated&quot;"/>
+                        <item value="&quot;design&quot;"/>
+                        <item value="&quot;development&quot;"/>
+                        <item value="&quot;preview&quot;"/>
+                        <item value="&quot;production&quot;"/>
+                        <item value="&quot;retired&quot;"/>
+                        <item value="&quot;testing&quot;"/>
+                      </enum>
+                    </prop>
+                    <prop type="string" name="title" required="True">
+                      <format maxLength="50" minLength="1"/>
+                    </prop>
+                  </prop>
+                  <prop readOnly="True" type="object" name="systemData">
+                    <prop type="dateTime" name="createdAt"/>
+                    <prop type="string" name="createdBy"/>
+                    <prop type="string" name="createdByType">
+                      <enum>
+                        <item value="&quot;Application&quot;"/>
+                        <item value="&quot;Key&quot;"/>
+                        <item value="&quot;ManagedIdentity&quot;"/>
+                        <item value="&quot;User&quot;"/>
+                      </enum>
+                    </prop>
+                    <prop type="dateTime" name="lastModifiedAt"/>
+                    <prop type="string" name="lastModifiedBy"/>
+                    <prop type="string" name="lastModifiedByType">
+                      <enum>
+                        <item value="&quot;Application&quot;"/>
+                        <item value="&quot;Key&quot;"/>
+                        <item value="&quot;ManagedIdentity&quot;"/>
+                        <item value="&quot;User&quot;"/>
+                      </enum>
+                    </prop>
+                  </prop>
+                  <prop readOnly="True" type="string" name="type"/>
+                </schema>
               </json>
             </body>
           </response>

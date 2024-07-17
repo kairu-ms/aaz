@@ -28,5 +28,10 @@ List a collection of APIs.
 
 - List APIs
     ```bash
-        apic api list -g contoso-resources -s contoso
+        apic api list -g contoso-resources -n contoso
+    ```
+
+- List APIs with filter
+    ```bash
+        apic api list -g contoso-resources -n contoso --filter "kind eq 'rest'"
     ```

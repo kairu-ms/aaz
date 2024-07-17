@@ -13,9 +13,6 @@ Commands to manage API deployments in API Center
 - [delete](/Commands/apic/api/deployment/_delete.md)
 : Delete API deployment.
 
-- [head](/Commands/apic/api/deployment/_head.md)
-: Checks if specified API deployment exists.
-
 - [list](/Commands/apic/api/deployment/_list.md)
 : List a collection of API deployments.
 

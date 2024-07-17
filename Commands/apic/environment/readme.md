@@ -13,9 +13,6 @@ Commands to manage Environments in API Center
 - [delete](/Commands/apic/environment/_delete.md)
 : Delete the environment.
 
-- [head](/Commands/apic/environment/_head.md)
-: Checks if specified environment exists.
-
 - [list](/Commands/apic/environment/_list.md)
 : List a collection of environments.
 

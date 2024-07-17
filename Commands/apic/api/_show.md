@@ -23,5 +23,5 @@ Get details of the API.
 
 - Show API details
     ```bash
-        apic api show -g contoso-resources -s contoso --name echo-api
+        apic api show -g contoso-resources -n contoso --api-id echo-api
     ```

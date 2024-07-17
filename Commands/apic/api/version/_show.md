@@ -23,5 +23,5 @@ Get details of the API version.
 
 - Show API version details
     ```bash
-        apic api version show -g api-center-test -s contoso --api-name echo-api --name 2023-01-01
+        apic api version show -g api-center-test -n contoso --api-id echo-api --version-id 2023-01-01
     ```
