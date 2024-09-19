@@ -32,7 +32,7 @@
                 <schema type="object">
                   <prop readOnly="True" type="string" name="deploymentUrl"/>
                   <prop readOnly="True" type="string" name="diskCapacity"/>
-                  <prop type="object" name="marketplaceSaasInfo">
+                  <prop readOnly="True" type="object" name="marketplaceSaasInfo">
                     <prop type="string" name="marketplaceName"/>
                     <prop type="string" name="marketplaceResourceId"/>
                     <prop type="object" name="marketplaceSubscription">
@@ -40,7 +40,7 @@
                     </prop>
                   </prop>
                   <prop readOnly="True" type="string" name="memoryCapacity"/>
-                  <prop type="string" name="status">
+                  <prop readOnly="True" type="string" name="status">
                     <enum>
                       <item value="&quot;Healthy&quot;"/>
                       <item value="&quot;Unhealthy&quot;"/>

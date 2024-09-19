@@ -4,6 +4,9 @@ Manage Microsoft Elastic.
 
 ## Subgroups
 
+- [elastic-version](/Commands/elastic/elastic-version/readme.md)
+: Manage the version of Elastic
+
 - [monitor](/Commands/elastic/monitor/readme.md)
 : Manage monitor with elastic.
 
